@@ -9,12 +9,15 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import java.io.IOException;
+import java.io.Serializable;
+import java.io.StringWriter;
 
 /**
  * Created by Tiago on 28/09/2015.
  */
 public class WebCrawler {
 
+    public static StringWriter xmltext;
 
     public static void main(String[] args) throws IOException{
 
@@ -46,7 +49,9 @@ public class WebCrawler {
             JAXBContext jc = JAXBContext.newInstance(ListOfThings.class);
             Marshaller ms = jc.createMarshaller();
             ms.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-            ms.marshal(capsula, System.out);
+            xmltext = new StringWriter();
+            ms.marshal(capsula, xmltext);
+            System.out.print(xmltext);
         } catch (JAXBException e) {
             e.printStackTrace();
         }
