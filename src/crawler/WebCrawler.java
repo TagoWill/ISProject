@@ -20,6 +20,8 @@ public class WebCrawler {
 
     private static void processWebPage(String link) throws IOException{
 
+        ListOfThings capsula = new ListOfThings();
+
         Document dom = Jsoup.connect(link).get();
 
         /*Elements links = dom.select("http://www.pixmania.pt/telefones/telemovel/smartphone-19883-s.html");
@@ -32,29 +34,33 @@ public class WebCrawler {
             }
         }*/
         Elements links = dom.select("a[class=imgC]");
-
+        
         for(Element e: links){
-            extractInformation(e.attr("href"));
+            capsula.getData().add(extractInformation(e.attr("href")));
         }
 
     }
 
-    private static void extractInformation(String url) throws IOException{
+    private static ListOfThings.Info extractInformation(String url) throws IOException{
+        ListOfThings.Info item = new ListOfThings.Info();
+
         Document dompagina = Jsoup.connect(url).get();
 
-        dompagina.getElementsByClass("pageTitle")
-                .get(0).getElementsByAttributeValue("itemprop", "brand").text();
+        item.setBrand(dompagina.getElementsByClass("pageTitle")
+                .get(0).getElementsByAttributeValue("itemprop", "brand").text());
 
-        dompagina.getElementsByClass("pageTitle")
-                .get(0).getElementsByAttributeValue("itemprop", "name").text();
+        item.setName(dompagina.getElementsByClass("pageTitle")
+                .get(0).getElementsByAttributeValue("itemprop", "name").text());
 
-        dompagina.getElementsByClass("currentPrice")
-                .get(0).getElementsByAttributeValue("itemprop", "price").text();
+        item.setPrice(dompagina.getElementsByClass("currentPrice")
+                .get(0).getElementsByAttributeValue("itemprop", "price").text());
 
         dompagina.getElementsByClass("descTxt").text();
 
-        System.out.println(dompagina.getElementsByClass("customList").get(0).getElementsByAttributeValue("itemprop", "description").text());
+        dompagina.getElementsByClass("customList").get(0).getElementsByAttributeValue("itemprop", "description").text();
 
         //System.out.println(dompagina);
+
+        return item;
     }
 }
