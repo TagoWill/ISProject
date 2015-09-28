@@ -5,6 +5,9 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
 import java.io.IOException;
 
 /**
@@ -34,9 +37,18 @@ public class WebCrawler {
             }
         }*/
         Elements links = dom.select("a[class=imgC]");
-        
+
         for(Element e: links){
             capsula.getData().add(extractInformation(e.attr("href")));
+        }
+
+        try {
+            JAXBContext jc = JAXBContext.newInstance(ListOfThings.class);
+            Marshaller ms = jc.createMarshaller();
+            ms.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+            ms.marshal(capsula, System.out);
+        } catch (JAXBException e) {
+            e.printStackTrace();
         }
 
     }
