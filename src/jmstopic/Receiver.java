@@ -3,16 +3,21 @@ package jmstopic;
 /**
  * Created by Tiago on 28/09/2015.
  */
+import java.io.IOException;
 import javax.jms.ConnectionFactory;
 import javax.jms.Destination;
 import javax.jms.JMSConsumer;
 import javax.jms.JMSContext;
+import javax.jms.JMSException;
 import javax.jms.JMSRuntimeException;
+import javax.jms.Message;
+import javax.jms.MessageListener;
+import javax.jms.TextMessage;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
 
-public class Receiver {
+public class Receiver implements MessageListener {
     private ConnectionFactory cf;
     private Destination d;
 
@@ -21,23 +26,32 @@ public class Receiver {
         this.d = InitialContext.doLookup("jms/topic/PlayTopic");
     }
 
-    private String receive() {
-        String msg = null;
-        try (JMSContext jcontex = cf.createContext("tiago", "12");) {
-            JMSConsumer mc = jcontex.createConsumer(d);
-            msg = mc.receiveBody(String.class);
-        } catch (JMSRuntimeException re) {
+    @Override
+    public void onMessage(Message msg) {
+        TextMessage tmsg = (TextMessage) msg;
+        try {
+            System.out.println("Got message: " + tmsg.getText());
+        } catch (JMSException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void launch_and_wait() {
+        try (JMSContext jcontext = cf.createContext("tiago", "12");) {
+            JMSConsumer consumer = jcontext.createConsumer(d);
+            consumer.setMessageListener(this);
+            System.out.println("Press enter to finish...");
+            System.in.read();
+        } catch (JMSRuntimeException | IOException re) {
             re.printStackTrace();
         }
-        return msg;
     }
 
     public static void main(String[] args) throws NamingException {
         Receiver r = new Receiver();
-
-        String msg = r.receive();
-        System.out.println("Message: " + msg);
+        r.launch_and_wait();
     }
+
 
 
 }
