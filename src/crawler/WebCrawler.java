@@ -5,6 +5,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import javax.naming.NamingException;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
@@ -51,7 +52,15 @@ public class WebCrawler {
             ms.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
             xmltext = new StringWriter();
             ms.marshal(capsula, xmltext);
-            System.out.print(xmltext);
+            //System.out.print(xmltext);
+
+            try {
+                jmstopic.Sender teste = new jmstopic.Sender();
+                teste.send(xmltext.toString());
+            } catch (NamingException e) {
+                e.printStackTrace();
+            }
+
         } catch (JAXBException e) {
             e.printStackTrace();
         }

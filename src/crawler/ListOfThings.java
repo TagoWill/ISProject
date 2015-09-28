@@ -10,11 +10,11 @@ import java.util.List;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-        "metricData"
+        "data"
 })
 @XmlRootElement(name = "listofthings")
 public class ListOfThings {
-    @XmlElement(name = "metric_data", required = true)
+    @XmlElement(name = "info", required = true)
     protected List<ListOfThings.Info> data;
     @XmlAttribute(name = "timestamp")
     protected Long timestamp;
@@ -58,6 +58,13 @@ public class ListOfThings {
         this.version = version;
     }
 
+
+    @XmlAccessorType(XmlAccessType.FIELD)
+    @XmlType(name = "", propOrder = {
+            "brand",
+            "name",
+            "price"
+    })
     public static class Info{
 
         protected String brand;
