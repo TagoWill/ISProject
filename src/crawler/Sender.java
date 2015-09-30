@@ -26,8 +26,10 @@ public class Sender {
         try (JMSContext jcontext = cf.createContext("tiago", "12");) {
             JMSProducer mp = jcontext.createProducer();
             mp.send(d, text);
+            System.out.print("ola");
         } catch (JMSRuntimeException re) {
             re.printStackTrace();
+            System.out.print("adeus");
         }
     }
 

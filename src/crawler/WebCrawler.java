@@ -9,8 +9,8 @@ import javax.naming.NamingException;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
-import java.io.IOException;
-import java.io.StringWriter;
+import java.io.*;
+import java.nio.charset.Charset;
 
 /**
  * Created by Tiago on 28/09/2015.
@@ -20,7 +20,7 @@ public class WebCrawler {
     public static StringWriter xmltext;
 
     public static void main(String[] args) throws IOException{
-
+        //VERIFICAR SE EXISTE ALGUM FICHEIRO PARA ENVIAR!!
         processWebPage("http://www.pixmania.pt/telefones/telemovel/smartphone-19883-s.html");
     }
 
@@ -54,19 +54,36 @@ public class WebCrawler {
             ms.marshal(capsula, xmltext);
             //System.out.print(xmltext);
 
-            try {
-                System.out.println("Enviar para jmstopic");
-                //SE NAO HOUVER CONNECT HA QUE GRAVAR UM FICHEIRO
-                Sender teste = new Sender();
-                teste.send(xmltext.toString());
-            } catch (NamingException e) {
+            int contador = 0;
+            boolean deu = false;
+            while (!deu && contador < 5) {
+                try {
+                    System.out.println("Enviar para jmstopic");
+                    //SE NAO HOUVER CONNECT HA QUE GRAVAR UM FICHEIRO
+                    Sender teste = new Sender();
+                    teste.send(xmltext.toString());
+                    deu = true;
+                } catch (NamingException e) {
+                    System.out.println("Falhou envio..");
+                    contador++;
+                    e.printStackTrace();
+                }
+            }
+            if(!deu){
+                writeXmlInFile(xmltext.toString());
+            }
+            }catch(JAXBException e){
                 e.printStackTrace();
             }
 
-        } catch (JAXBException e) {
-            e.printStackTrace();
-        }
 
+    }
+
+    private static void writeXmlInFile(String s) throws IOException{
+        File file = new File("./src/crawler/smartphones.xml");
+        OutputStream out = new FileOutputStream(file);
+        out.write(s.getBytes(Charset.forName("UTF-8")));
+        out.close();
     }
 
     private static ListOfThings.Info extractInformation(String url) throws IOException{

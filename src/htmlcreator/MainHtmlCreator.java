@@ -41,6 +41,18 @@ public class MainHtmlCreator implements MessageListener {
         }
     }
 
+    public void createHtml(){
+        /*try {
+            File stylesheet = new File(argv[0]);
+            File datafile = new File(argv[1]);
+
+            DocumentBuilder builder = factory.newDocumentBuilder();
+            document = builder.parse(datafile);
+            // ...
+            StreamSource stylesource = new StreamSource(stylesheet);
+            Transformer transformer = Factory.newTransformer(stylesource);
+        }*/
+    }
     public static void main(String[] args) throws NamingException {
         MainHtmlCreator r = new MainHtmlCreator();
         r.launch_and_wait();
