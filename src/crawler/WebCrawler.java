@@ -10,7 +10,6 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import java.io.IOException;
-import java.io.Serializable;
 import java.io.StringWriter;
 
 /**
@@ -27,9 +26,10 @@ public class WebCrawler {
 
     private static void processWebPage(String link) throws IOException{
 
+        System.out.println("Parsing Site");
         ListOfThings capsula = new ListOfThings();
 
-        Document dom = Jsoup.connect(link).get();
+        Document dom = Jsoup.connect(link).timeout(0).get();
 
         /*Elements links = dom.select("http://www.pixmania.pt/telefones/telemovel/smartphone-19883-s.html");
 
@@ -55,7 +55,9 @@ public class WebCrawler {
             //System.out.print(xmltext);
 
             try {
-                jmstopic.Sender teste = new jmstopic.Sender();
+                System.out.println("Enviar para jmstopic");
+                //SE NAO HOUVER CONNECT HA QUE GRAVAR UM FICHEIRO
+                Sender teste = new Sender();
                 teste.send(xmltext.toString());
             } catch (NamingException e) {
                 e.printStackTrace();
@@ -68,9 +70,11 @@ public class WebCrawler {
     }
 
     private static ListOfThings.Info extractInformation(String url) throws IOException{
+
+        System.out.println("Popular xml");
         ListOfThings.Info item = new ListOfThings.Info();
 
-        Document dompagina = Jsoup.connect(url).get();
+        Document dompagina = Jsoup.connect(url).timeout(0).get();
 
         item.setBrand(dompagina.getElementsByClass("pageTitle")
                 .get(0).getElementsByAttributeValue("itemprop", "brand").text());

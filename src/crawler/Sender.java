@@ -1,4 +1,4 @@
-package jmstopic;
+package crawler;
 
 /**
  * Created by Tiago on 28/09/2015.
@@ -31,8 +31,8 @@ public class Sender {
         }
     }
 
-    public static void main(String[] args) throws NamingException {
+    /*public static void main(String[] args) throws NamingException {
         Sender s = new Sender();
         s.send("Hello Receiver!");
-    }
+    }*/
 }

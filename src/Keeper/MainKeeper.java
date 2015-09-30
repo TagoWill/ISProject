@@ -1,27 +1,19 @@
-package jmstopic;
+package Keeper;
 
-/**
- * Created by Tiago on 28/09/2015.
- */
-import java.io.IOException;
-import javax.jms.ConnectionFactory;
-import javax.jms.Destination;
-import javax.jms.JMSConsumer;
-import javax.jms.JMSContext;
-import javax.jms.JMSException;
-import javax.jms.JMSRuntimeException;
-import javax.jms.Message;
-import javax.jms.MessageListener;
-import javax.jms.TextMessage;
+import javax.jms.*;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
+import java.io.IOException;
 
+/**
+ * Created by Tiago on 30/09/2015.
+ */
+public class MainKeeper implements MessageListener{
 
-public class Receiver implements MessageListener {
     private ConnectionFactory cf;
-    private Destination d;
+    private Topic d;
 
-    public Receiver() throws NamingException {
+    public MainKeeper() throws NamingException {
         this.cf = InitialContext.doLookup("jms/RemoteConnectionFactory");
         this.d = InitialContext.doLookup("jms/topic/PlayTopic");
     }
@@ -38,20 +30,19 @@ public class Receiver implements MessageListener {
 
     public void launch_and_wait() {
         try (JMSContext jcontext = cf.createContext("tiago", "12");) {
-            JMSConsumer consumer = jcontext.createConsumer(d);
+            jcontext.setClientID("htmlcreator");
+            JMSConsumer consumer = jcontext.createDurableConsumer(d, "htmlcreator");
             consumer.setMessageListener(this);
             System.out.println("Press enter to finish...");
             System.in.read();
+            consumer.close();
         } catch (JMSRuntimeException | IOException re) {
             re.printStackTrace();
         }
     }
 
     public static void main(String[] args) throws NamingException {
-        Receiver r = new Receiver();
+        MainKeeper r = new MainKeeper();
         r.launch_and_wait();
     }
-
-
-
 }
