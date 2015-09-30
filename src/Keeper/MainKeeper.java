@@ -1,4 +1,4 @@
-package Keeper;
+package keeper;
 
 import javax.jms.*;
 import javax.naming.InitialContext;
@@ -30,8 +30,8 @@ public class MainKeeper implements MessageListener{
 
     public void launch_and_wait() {
         try (JMSContext jcontext = cf.createContext("tiago", "12");) {
-            jcontext.setClientID("htmlcreator");
-            JMSConsumer consumer = jcontext.createDurableConsumer(d, "htmlcreator");
+            jcontext.setClientID("keeper");
+            JMSConsumer consumer = jcontext.createDurableConsumer(d, "keeper");
             consumer.setMessageListener(this);
             System.out.println("Press enter to finish...");
             System.in.read();
