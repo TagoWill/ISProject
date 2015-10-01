@@ -7,6 +7,7 @@ import java.io.IOException;
 
 /**
  * Created by Tiago on 30/09/2015.
+ * Trabalho: Interesacao de Sistemas
  */
 public class MainKeeper implements MessageListener{
 
@@ -28,8 +29,9 @@ public class MainKeeper implements MessageListener{
         }
     }
 
+    @SuppressWarnings("all")
     public void launch_and_wait() {
-        try (JMSContext jcontext = cf.createContext("tiago", "12");) {
+        try (JMSContext jcontext = cf.createContext("tiago", "12")) {
             jcontext.setClientID("keeper");
             JMSConsumer consumer = jcontext.createDurableConsumer(d, "keeper");
             consumer.setMessageListener(this);

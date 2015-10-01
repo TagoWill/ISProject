@@ -7,6 +7,7 @@ import java.io.IOException;
 
 /**
  * Created by Tiago on 30/09/2015.
+ * Trabalho: Interesacao de Sistemas
  */
 public class MainHtmlCreator implements MessageListener {
 
@@ -23,13 +24,16 @@ public class MainHtmlCreator implements MessageListener {
         TextMessage tmsg = (TextMessage) msg;
         try {
             System.out.println("Got message: " + tmsg.getText());
+            createHtml();
         } catch (JMSException e) {
             e.printStackTrace();
         }
     }
 
+    //Estava chato com o System.in
+    @SuppressWarnings("all")
     public void launch_and_wait() {
-        try (JMSContext jcontext = cf.createContext("tiago", "12");) {
+        try (JMSContext jcontext = cf.createContext("tiago", "12")) {
             jcontext.setClientID("htmlcreator");
             JMSConsumer consumer = jcontext.createDurableConsumer(d, "htmlcreator");
             consumer.setMessageListener(this);
@@ -42,6 +46,7 @@ public class MainHtmlCreator implements MessageListener {
     }
 
     public void createHtml(){
+        System.out.println("Cheguei aqui");
         /*try {
             File stylesheet = new File(argv[0]);
             File datafile = new File(argv[1]);

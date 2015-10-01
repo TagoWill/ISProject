@@ -2,6 +2,7 @@ package crawler;
 
 /**
  * Created by Tiago on 28/09/2015.
+ * Trabalho: Interesacao de Sistemas
  */
 
 import javax.jms.ConnectionFactory;
@@ -23,13 +24,11 @@ public class Sender {
     }
 
     public void send(String text) {
-        try (JMSContext jcontext = cf.createContext("tiago", "12");) {
+        try (JMSContext jcontext = cf.createContext("tiago", "12")) {
             JMSProducer mp = jcontext.createProducer();
             mp.send(d, text);
-            System.out.print("ola");
         } catch (JMSRuntimeException re) {
             re.printStackTrace();
-            System.out.print("adeus");
         }
     }
 
