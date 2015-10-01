@@ -11,6 +11,8 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import java.io.*;
 import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 /**
  * Created by Tiago on 28/09/2015.
@@ -20,8 +22,30 @@ public class WebCrawler {
     public static StringWriter xmltext;
 
     public static void main(String[] args) throws IOException{
-        //VERIFICAR SE EXISTE ALGUM FICHEIRO PARA ENVIAR!!
-        processWebPage("http://www.pixmania.pt/telefones/telemovel/smartphone-19883-s.html");
+        File file = new File("./src/crawler/smartphones.xml");
+        if(file.exists()){
+            System.out.println("Ficheiro existe");
+            Sender teste = null;
+            try {
+                System.out.println("Enviar xml já existente");
+                teste = new Sender();
+                teste.send(readFile("./src/crawler/smartphones.xml", Charset.forName("UTF-8")));
+                file.delete();
+            } catch (NamingException e) {
+                e.printStackTrace();
+            }
+
+        }else {
+            System.out.println("Ficheiro nao existe");
+            processWebPage("http://www.pixmania.pt/telefones/telemovel/smartphone-19883-s.html");
+        }
+    }
+
+    static String readFile(String path, Charset encoding)
+            throws IOException
+    {
+        byte[] encoded = Files.readAllBytes(Paths.get(path));
+        return new String(encoded, encoding);
     }
 
     private static void processWebPage(String link) throws IOException{
@@ -72,14 +96,15 @@ public class WebCrawler {
             if(!deu){
                 writeXmlInFile(xmltext.toString());
             }
-            }catch(JAXBException e){
-                e.printStackTrace();
-            }
+        }catch(JAXBException e){
+            e.printStackTrace();
+        }
 
 
     }
 
     private static void writeXmlInFile(String s) throws IOException{
+        System.out.println("Criar ficheiro");
         File file = new File("./src/crawler/smartphones.xml");
         OutputStream out = new FileOutputStream(file);
         out.write(s.getBytes(Charset.forName("UTF-8")));
