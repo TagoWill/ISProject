@@ -16,6 +16,7 @@ import java.nio.file.Paths;
 
 /**
  * Created by Tiago on 28/09/2015.
+ * Trabalho: Interesacao de Sistemas
  */
 public class WebCrawler {
 
@@ -25,12 +26,15 @@ public class WebCrawler {
         File file = new File("./src/crawler/smartphones.xml");
         if(file.exists()){
             System.out.println("Ficheiro existe");
-            Sender teste = null;
             try {
                 System.out.println("Enviar xml já existente");
-                teste = new Sender();
+                Sender teste = new Sender();
                 teste.send(readFile("./src/crawler/smartphones.xml", Charset.forName("UTF-8")));
-                file.delete();
+                if(file.delete()){
+                    System.out.println("Ficheiro apagado");
+                }else{
+                    System.out.println("Erro: Fcheiro nao apagado");
+                }
             } catch (NamingException e) {
                 e.printStackTrace();
             }
