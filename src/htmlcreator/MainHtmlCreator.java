@@ -15,12 +15,14 @@ public class MainHtmlCreator implements MessageListener {
     private Topic d;
 
     public MainHtmlCreator() throws NamingException {
+
         this.cf = InitialContext.doLookup("jms/RemoteConnectionFactory");
         this.d = InitialContext.doLookup("jms/topic/PlayTopic");
     }
 
     @Override
     public void onMessage(Message msg) {
+
         TextMessage tmsg = (TextMessage) msg;
         try {
             System.out.println("Got message: " + tmsg.getText());
@@ -33,6 +35,7 @@ public class MainHtmlCreator implements MessageListener {
     //Estava chato com o System.in
     @SuppressWarnings("all")
     public void launch_and_wait() {
+
         try (JMSContext jcontext = cf.createContext("tiago", "12")) {
             jcontext.setClientID("htmlcreator");
             JMSConsumer consumer = jcontext.createDurableConsumer(d, "htmlcreator");
@@ -46,7 +49,10 @@ public class MainHtmlCreator implements MessageListener {
     }
 
     public void createHtml(){
+
         System.out.println("Cheguei aqui");
+        //supostamente pega no xml e no xsd e transforma para html..
+        //necessario contruir xsd
         /*try {
             File stylesheet = new File(argv[0]);
             File datafile = new File(argv[1]);

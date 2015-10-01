@@ -19,11 +19,13 @@ public class Sender {
     private Destination d;
 
     public Sender() throws NamingException {
+
         this.cf = InitialContext.doLookup("jms/RemoteConnectionFactory");
         this.d = InitialContext.doLookup("jms/topic/PlayTopic");
     }
 
     public void send(String text) {
+        
         try (JMSContext jcontext = cf.createContext("tiago", "12")) {
             JMSProducer mp = jcontext.createProducer();
             mp.send(d, text);

@@ -23,6 +23,7 @@ public class WebCrawler {
     public static StringWriter xmltext;
 
     public static void main(String[] args) throws IOException{
+
         File file = new File("./src/crawler/smartphones.xml");
         if(file.exists()){
             System.out.println("Ficheiro existe");
@@ -45,9 +46,8 @@ public class WebCrawler {
         }
     }
 
-    static String readFile(String path, Charset encoding)
-            throws IOException
-    {
+    static String readFile(String path, Charset encoding) throws IOException {
+
         byte[] encoded = Files.readAllBytes(Paths.get(path));
         return new String(encoded, encoding);
     }
@@ -108,6 +108,7 @@ public class WebCrawler {
     }
 
     private static void writeXmlInFile(String s) throws IOException{
+
         System.out.println("Criar ficheiro");
         File file = new File("./src/crawler/smartphones.xml");
         OutputStream out = new FileOutputStream(file);

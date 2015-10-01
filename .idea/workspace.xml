@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0cb30bc3-4db4-465c-9e6b-37a647da70d2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/crawler/ListOfThings.java" afterPath="$PROJECT_DIR$/src/crawler/ListOfThings.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/requester/MainRequester.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/htmlcreator/MainHtmlCreator.java" afterPath="$PROJECT_DIR$/src/htmlcreator/MainHtmlCreator.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/keeper/MainKeeper.java" afterPath="$PROJECT_DIR$/src/keeper/MainKeeper.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/crawler/Sender.java" afterPath="$PROJECT_DIR$/src/crawler/Sender.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/crawler/WebCrawler.java" afterPath="$PROJECT_DIR$/src/crawler/WebCrawler.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="IS_Project.iws" />
@@ -28,11 +29,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="WebCrawler.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="WebCrawler.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/crawler/WebCrawler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.34151787">
-              <caret line="18" column="3" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="36" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="110" column="0" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -44,11 +45,20 @@
         <entry file="file://$PROJECT_DIR$/src/htmlcreator/MainHtmlCreator.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="35" column="41" selection-start-line="35" selection-start-column="41" selection-end-line="35" selection-end-column="41" />
+              <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#870#894#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainRequester.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/requester/MainRequester.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -57,8 +67,10 @@
         <entry file="file://$PROJECT_DIR$/src/keeper/MainKeeper.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="31" column="26" selection-start-line="31" selection-start-column="26" selection-end-line="31" selection-end-column="26" />
-              <folding />
+              <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+              <folding>
+                <element signature="e#795#819#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -69,49 +81,17 @@
             <state vertical-scroll-proportion="0.0">
               <caret line="97" column="32" selection-start-line="97" selection-start-column="32" selection-end-line="97" selection-end-column="32" />
               <folding>
-                <element signature="e#786#810#0" expanded="true" />
-                <element signature="e#842#843#0" expanded="true" />
-                <element signature="e#874#875#0" expanded="true" />
-                <element signature="e#881#905#0" expanded="true" />
-                <element signature="e#951#952#0" expanded="true" />
-                <element signature="e#993#994#0" expanded="true" />
-                <element signature="e#1000#1024#0" expanded="true" />
-                <element signature="e#1057#1058#0" expanded="true" />
-                <element signature="e#1088#1089#0" expanded="true" />
-                <element signature="e#1095#1119#0" expanded="true" />
-                <element signature="e#1165#1166#0" expanded="true" />
-                <element signature="e#1205#1206#0" expanded="true" />
-                <element signature="e#1212#1236#0" expanded="true" />
-                <element signature="e#1268#1269#0" expanded="true" />
-                <element signature="e#1298#1299#0" expanded="true" />
-                <element signature="e#1305#1329#0" expanded="true" />
-                <element signature="e#1373#1374#0" expanded="true" />
-                <element signature="e#1411#1412#0" expanded="true" />
-                <element signature="e#1698#1722#0" expanded="true" />
-                <element signature="e#1756#1757#0" expanded="true" />
-                <element signature="e#1792#1793#0" expanded="true" />
-                <element signature="e#1839#1840#0" expanded="true" />
-                <element signature="e#1881#1882#0" expanded="true" />
-                <element signature="e#1892#1916#0" expanded="true" />
-                <element signature="e#1949#1950#0" expanded="true" />
-                <element signature="e#1984#1985#0" expanded="true" />
-                <element signature="e#2030#2031#0" expanded="true" />
-                <element signature="e#2070#2071#0" expanded="true" />
                 <element signature="e#2081#2105#0" expanded="true" />
-                <element signature="e#2139#2140#0" expanded="true" />
-                <element signature="e#2175#2176#0" expanded="true" />
-                <element signature="e#2222#2223#0" expanded="true" />
-                <element signature="e#2264#2265#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Sender.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Sender.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/crawler/Sender.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="26" column="66" selection-start-line="26" selection-start-column="66" selection-end-line="26" selection-end-column="66" />
+            <state vertical-scroll-proportion="0.5117057">
+              <caret line="27" column="8" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -146,11 +126,12 @@
         <option value="$PROJECT_DIR$/src/jmstopic.jndi" />
         <option value="$PROJECT_DIR$/src/jmstopic/Receiver.java" />
         <option value="$PROJECT_DIR$/src/Keeper/MainKeeper.java" />
+        <option value="$PROJECT_DIR$/src/crawler/ListOfThings.java" />
+        <option value="$PROJECT_DIR$/src/requester/MainRequester.java" />
         <option value="$PROJECT_DIR$/src/crawler/WebCrawler.java" />
         <option value="$PROJECT_DIR$/src/htmlcreator/MainHtmlCreator.java" />
-        <option value="$PROJECT_DIR$/src/crawler/Sender.java" />
         <option value="$PROJECT_DIR$/src/keeper/MainKeeper.java" />
-        <option value="$PROJECT_DIR$/src/crawler/ListOfThings.java" />
+        <option value="$PROJECT_DIR$/src/crawler/Sender.java" />
       </list>
     </option>
   </component>
@@ -186,6 +167,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -216,6 +199,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IS_Project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IS_Project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="requester" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -275,8 +276,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -642,22 +641,35 @@
       <option name="project" value="LOCAL" />
       <updated>1443725532887</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Retirar todos os warnings do projecto">
+      <created>1443726514293</created>
+      <option name="number" value="00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1443726514293</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3267974" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32900432" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31601733" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14712153" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -665,13 +677,15 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3267974" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31601733" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -700,7 +714,8 @@
     <MESSAGE value="Crawler guarda ficheiro quando nao tem ligacao. falta verificar se tem ficheiro para enviar" />
     <MESSAGE value="Crawler guarda xml quando server offline" />
     <MESSAGE value="Retirando warnings. melhoramento de funcionalidades no crawler" />
-    <option name="LAST_COMMIT_MESSAGE" value="Retirando warnings. melhoramento de funcionalidades no crawler" />
+    <MESSAGE value="Retirar todos os warnings do projecto" />
+    <option name="LAST_COMMIT_MESSAGE" value="Retirar todos os warnings do projecto" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -724,10 +739,59 @@
     <entry file="file://$PROJECT_DIR$/src/htmlcreator/MainHtmlCreator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
+          <caret line="35" column="41" selection-start-line="35" selection-start-column="41" selection-end-line="35" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/keeper/MainKeeper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="31" column="26" selection-start-line="31" selection-start-column="26" selection-end-line="31" selection-end-column="26" />
+          <folding>
+            <element signature="e#795#819#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/crawler/ListOfThings.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="97" column="32" selection-start-line="97" selection-start-column="32" selection-end-line="97" selection-end-column="32" />
+          <folding>
+            <element signature="e#2081#2105#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/crawler/Sender.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="26" column="66" selection-start-line="26" selection-start-column="66" selection-end-line="26" selection-end-column="66" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/crawler/WebCrawler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/htmlcreator/MainHtmlCreator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
           <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#870#894#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -744,7 +808,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#795#819#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -774,7 +840,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#870#894#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -791,7 +856,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#795#819#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -821,7 +888,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#870#894#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -852,7 +918,6 @@
           <caret line="46" column="5" selection-start-line="12" selection-start-column="4" selection-end-line="46" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#870#894#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1017,66 +1082,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/crawler/Sender.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="26" column="66" selection-start-line="26" selection-start-column="66" selection-end-line="26" selection-end-column="66" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/keeper/MainKeeper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="31" column="26" selection-start-line="31" selection-start-column="26" selection-end-line="31" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/crawler/ListOfThings.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="97" column="32" selection-start-line="97" selection-start-column="32" selection-end-line="97" selection-end-column="32" />
-          <folding>
-            <element signature="e#786#810#0" expanded="true" />
-            <element signature="e#842#843#0" expanded="true" />
-            <element signature="e#874#875#0" expanded="true" />
-            <element signature="e#881#905#0" expanded="true" />
-            <element signature="e#951#952#0" expanded="true" />
-            <element signature="e#993#994#0" expanded="true" />
-            <element signature="e#1000#1024#0" expanded="true" />
-            <element signature="e#1057#1058#0" expanded="true" />
-            <element signature="e#1088#1089#0" expanded="true" />
-            <element signature="e#1095#1119#0" expanded="true" />
-            <element signature="e#1165#1166#0" expanded="true" />
-            <element signature="e#1205#1206#0" expanded="true" />
-            <element signature="e#1212#1236#0" expanded="true" />
-            <element signature="e#1268#1269#0" expanded="true" />
-            <element signature="e#1298#1299#0" expanded="true" />
-            <element signature="e#1305#1329#0" expanded="true" />
-            <element signature="e#1373#1374#0" expanded="true" />
-            <element signature="e#1411#1412#0" expanded="true" />
-            <element signature="e#1698#1722#0" expanded="true" />
-            <element signature="e#1756#1757#0" expanded="true" />
-            <element signature="e#1792#1793#0" expanded="true" />
-            <element signature="e#1839#1840#0" expanded="true" />
-            <element signature="e#1881#1882#0" expanded="true" />
-            <element signature="e#1892#1916#0" expanded="true" />
-            <element signature="e#1949#1950#0" expanded="true" />
-            <element signature="e#1984#1985#0" expanded="true" />
-            <element signature="e#2030#2031#0" expanded="true" />
-            <element signature="e#2070#2071#0" expanded="true" />
-            <element signature="e#2081#2105#0" expanded="true" />
-            <element signature="e#2139#2140#0" expanded="true" />
-            <element signature="e#2175#2176#0" expanded="true" />
-            <element signature="e#2222#2223#0" expanded="true" />
-            <element signature="e#2264#2265#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/htmlcreator/convert.xsl">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1085,21 +1090,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/htmlcreator/MainHtmlCreator.java">
+    <entry file="file://$PROJECT_DIR$/src/crawler/WebCrawler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="35" column="41" selection-start-line="35" selection-start-column="41" selection-end-line="35" selection-end-column="41" />
+          <caret line="110" column="0" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#870#894#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/crawler/WebCrawler.java">
+    <entry file="file://$PROJECT_DIR$/src/htmlcreator/MainHtmlCreator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34151787">
-          <caret line="18" column="3" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="36" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/requester/MainRequester.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/keeper/MainKeeper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding>
+            <element signature="e#795#819#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/crawler/ListOfThings.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="97" column="32" selection-start-line="97" selection-start-column="32" selection-end-line="97" selection-end-column="32" />
+          <folding>
+            <element signature="e#2081#2105#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/crawler/Sender.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5117057">
+          <caret line="27" column="8" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

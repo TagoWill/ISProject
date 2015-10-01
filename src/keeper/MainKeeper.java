@@ -15,12 +15,14 @@ public class MainKeeper implements MessageListener{
     private Topic d;
 
     public MainKeeper() throws NamingException {
+
         this.cf = InitialContext.doLookup("jms/RemoteConnectionFactory");
         this.d = InitialContext.doLookup("jms/topic/PlayTopic");
     }
 
     @Override
     public void onMessage(Message msg) {
+
         TextMessage tmsg = (TextMessage) msg;
         try {
             System.out.println("Got message: " + tmsg.getText());
@@ -31,6 +33,7 @@ public class MainKeeper implements MessageListener{
 
     @SuppressWarnings("all")
     public void launch_and_wait() {
+
         try (JMSContext jcontext = cf.createContext("tiago", "12")) {
             jcontext.setClientID("keeper");
             JMSConsumer consumer = jcontext.createDurableConsumer(d, "keeper");
@@ -44,6 +47,7 @@ public class MainKeeper implements MessageListener{
     }
 
     public static void main(String[] args) throws NamingException {
+
         MainKeeper r = new MainKeeper();
         r.launch_and_wait();
     }
