@@ -25,7 +25,7 @@ public class Sender {
     }
 
     public void send(String text) {
-        
+
         try (JMSContext jcontext = cf.createContext("tiago", "12")) {
             JMSProducer mp = jcontext.createProducer();
             mp.send(d, text);

@@ -66,13 +66,15 @@ public class ListOfThings {
     @XmlType(name = "", propOrder = {
             "brand",
             "name",
-            "price"
+            "price",
+            "extrainfo"
     })
     public static class Info{
 
         protected String brand;
         protected String name;
         protected String price;
+        protected List<ListOfThings.ExtraInfo> extrainfo;
 
         @SuppressWarnings("all")
         public String getBrand() {
@@ -89,7 +91,12 @@ public class ListOfThings {
             return name;
         }
 
-
+        public void addInfo(ExtraInfo aux) {
+            if(extrainfo == null){
+                extrainfo = new ArrayList<>();
+            }
+            extrainfo.add(aux);
+        }
 
         public void setName(String name) {
             this.name = name;
@@ -103,6 +110,37 @@ public class ListOfThings {
 
         public void setPrice(String price) {
             this.price = price;
+        }
+    }
+
+    @XmlAccessorType(XmlAccessType.FIELD)
+    @XmlType(name = "", propOrder = {
+            "category",
+            "description"
+    })
+    public static class ExtraInfo {
+        protected String category;
+        protected String description;
+
+        public ExtraInfo(String cat, String des){
+            this.category = cat;
+            this.description = des;
+        }
+
+        public String getCategory() {
+            return category;
+        }
+
+        public void setCategory(String category) {
+            this.category = category;
+        }
+
+        public String getDescription() {
+            return description;
+        }
+
+        public void setDescription(String description) {
+            this.description = description;
         }
     }
 }

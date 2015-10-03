@@ -13,6 +13,7 @@ import java.io.*;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.List;
 
 /**
  * Created by Tiago on 28/09/2015.
@@ -129,8 +130,23 @@ public class WebCrawler {
         item.setName(dompagina.getElementsByClass("pageTitle")
                 .get(0).getElementsByAttributeValue("itemprop", "name").text());
 
+        //Tem que ser em double nao String..
         item.setPrice(dompagina.getElementsByClass("currentPrice")
                 .get(0).getElementsByAttributeValue("itemprop", "price").text());
+
+        Elements elementos = dompagina.getElementsByClass("simpleTable");
+        for (Element el : elementos) {
+
+            Elements tagth = el.getElementsByTag("th");
+            List<Element> category = tagth.subList(0, tagth.size());
+
+            Elements tagtd = el.getElementsByTag("td");
+            List<Element> description = tagtd.subList(0, tagtd.size());
+
+            for (int i = 0; i < description.size(); i++) {
+                item.addInfo(new ListOfThings.ExtraInfo(category.get(i).text(), description.get(i).text()));
+            }
+        }
 
         dompagina.getElementsByClass("descTxt").text();
 
