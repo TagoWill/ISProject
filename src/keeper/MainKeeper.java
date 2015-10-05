@@ -1,23 +1,30 @@
 package keeper;
 
+import crawler.*;
+
 import javax.jms.*;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
+import javax.xml.bind.JAXB;
 import java.io.IOException;
+import java.io.StringReader;
+import java.util.Scanner;
 
 /**
  * Created by Tiago on 30/09/2015.
  * Trabalho: Interesacao de Sistemas
  */
-public class MainKeeper implements MessageListener{
+public class MainKeeper implements MessageListener, Runnable{
 
     private ConnectionFactory cf;
     private Topic d;
+    private ListOfThings items;
 
-    public MainKeeper() throws NamingException {
+    public MainKeeper(String connactionFactory, String playqueue) throws NamingException {
 
-        this.cf = InitialContext.doLookup("jms/RemoteConnectionFactory");
-        this.d = InitialContext.doLookup("jms/topic/PlayTopic");
+        items = new ListOfThings();
+        this.cf = InitialContext.doLookup(connactionFactory);
+        this.d = InitialContext.doLookup(playqueue);
     }
 
     @Override
@@ -26,9 +33,19 @@ public class MainKeeper implements MessageListener{
         TextMessage tmsg = (TextMessage) msg;
         try {
             System.out.println("Got message: " + tmsg.getText());
+            takeInformation(tmsg.getText());
         } catch (JMSException e) {
             e.printStackTrace();
         }
+    }
+
+    private void takeInformation(String text) {
+        System.out.println("unmarshal");
+
+        StringReader reader = new StringReader(text);
+        keeper.ListOfThings items = JAXB.unmarshal(reader, keeper.ListOfThings.class);
+
+        System.out.println("Oi: "+items.getData().get(0).getName()+" - "+items.getData().get(0).getPrice());
     }
 
     @SuppressWarnings("all")
@@ -48,7 +65,12 @@ public class MainKeeper implements MessageListener{
 
     public static void main(String[] args) throws NamingException {
 
-        MainKeeper r = new MainKeeper();
-        r.launch_and_wait();
+        (new Thread(new MainKeeper("jms/RemoteConnectionFactory", "jms/topic/PlayTopic"))).start();
+        //(new Thread(new MainKeeper("jms/RemoteConnectionFactory", "jms/topic/PlayQueue"))).start();
+    }
+
+    @Override
+    public void run() {
+        launch_and_wait();
     }
 }
