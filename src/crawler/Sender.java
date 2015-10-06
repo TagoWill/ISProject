@@ -33,9 +33,4 @@ public class Sender {
             re.printStackTrace();
         }
     }
-
-    /*public static void main(String[] args) throws NamingException {
-        Sender s = new Sender();
-        s.send("Hello Receiver!");
-    }*/
 }

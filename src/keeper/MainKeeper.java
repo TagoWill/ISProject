@@ -1,14 +1,11 @@
 package keeper;
 
-import crawler.*;
-
 import javax.jms.*;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.xml.bind.JAXB;
 import java.io.IOException;
 import java.io.StringReader;
-import java.util.Scanner;
 
 /**
  * Created by Tiago on 30/09/2015.
@@ -17,6 +14,7 @@ import java.util.Scanner;
 public class MainKeeper implements MessageListener, Runnable{
 
     private ConnectionFactory cf;
+    private Destination de;
     private Topic d;
     private ListOfThings items;
 
@@ -66,7 +64,7 @@ public class MainKeeper implements MessageListener, Runnable{
     public static void main(String[] args) throws NamingException {
 
         (new Thread(new MainKeeper("jms/RemoteConnectionFactory", "jms/topic/PlayTopic"))).start();
-        //(new Thread(new MainKeeper("jms/RemoteConnectionFactory", "jms/topic/PlayQueue"))).start();
+        (new Thread(new MainKeeper("jms/RemoteConnectionFactory", "jms/queue/PlayQueue"))).start();
     }
 
     @Override

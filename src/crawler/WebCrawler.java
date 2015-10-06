@@ -47,7 +47,7 @@ public class WebCrawler {
         }
     }
 
-    static String readFile(String path, Charset encoding) throws IOException {
+    private static String readFile(String path, Charset encoding) throws IOException {
 
         byte[] encoded = Files.readAllBytes(Paths.get(path));
         return new String(encoded, encoding);
@@ -60,15 +60,6 @@ public class WebCrawler {
 
         Document dom = Jsoup.connect(link).timeout(0).get();
 
-        /*Elements links = dom.select("http://www.pixmania.pt/telefones/telemovel/smartphone-19883-s.html");
-
-        for(Element e: links){
-            System.out.println(e.text());
-            if (e.text().equals("Smartphone")){
-                System.out.print("Encontrei   -  ");
-                System.out.println(e.text());
-            }
-        }*/
         Elements links = dom.select("a[class=imgC]");
 
         for(Element e: links){
@@ -81,14 +72,12 @@ public class WebCrawler {
             ms.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
             xmltext = new StringWriter();
             ms.marshal(capsula, xmltext);
-            //System.out.print(xmltext);
 
             int contador = 0;
             boolean deu = false;
             while (!deu && contador < 5) {
                 try {
                     System.out.println("Enviar para jmstopic");
-                    //SE NAO HOUVER CONNECT HA QUE GRAVAR UM FICHEIRO
                     Sender teste = new Sender();
                     teste.send(xmltext.toString());
                     deu = true;
@@ -144,13 +133,14 @@ public class WebCrawler {
             List<Element> description = tagtd.subList(0, tagtd.size());
 
             for (int i = 0; i < description.size(); i++) {
-                item.addInfo(new ListOfThings.ExtraInfo(category.get(i).text(), description.get(i).text()));
+                if(category.get(i).text().equalsIgnoreCase("sistema operativo") || category.get(i).text().equalsIgnoreCase("processador") || category.get(i).text().equalsIgnoreCase("Tamanho do ecrã"))
+                    item.addInfo(new ListOfThings.ExtraInfo(category.get(i).text().toLowerCase(), description.get(i).text().toLowerCase()));
             }
         }
 
-        dompagina.getElementsByClass("descTxt").text();
+        //dompagina.getElementsByClass("descTxt").text();
 
-        dompagina.getElementsByClass("customList").get(0).getElementsByAttributeValue("itemprop", "description").text();
+        //dompagina.getElementsByClass("customList").get(0).getElementsByAttributeValue("itemprop", "description").text();
 
         //System.out.println(dompagina);
 

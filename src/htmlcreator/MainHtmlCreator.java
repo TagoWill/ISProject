@@ -3,7 +3,15 @@ package htmlcreator;
 import javax.jms.*;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.stream.StreamSource;
+import java.io.File;
 import java.io.IOException;
+import java.io.StringReader;
+
+import javax.xml.transform.stream.StreamResult;
 
 /**
  * Created by Tiago on 30/09/2015.
@@ -26,13 +34,16 @@ public class MainHtmlCreator implements MessageListener {
         TextMessage tmsg = (TextMessage) msg;
         try {
             System.out.println("Got message: " + tmsg.getText());
-            createHtml();
+            try {
+                createHtml(tmsg.getText());
+            } catch (TransformerException | IOException e) {
+                e.printStackTrace();
+            }
         } catch (JMSException e) {
             e.printStackTrace();
         }
     }
 
-    //Estava chato com o System.in
     @SuppressWarnings("all")
     public void launch_and_wait() {
 
@@ -48,22 +59,20 @@ public class MainHtmlCreator implements MessageListener {
         }
     }
 
-    public void createHtml(){
+    public void createHtml(String dataXML) throws TransformerException, IOException {
 
-        System.out.println("Cheguei aqui");
-        //supostamente pega no xml e no xsd e transforma para html..
-        //necessario contruir xsd
-        /*try {
-            File stylesheet = new File(argv[0]);
-            File datafile = new File(argv[1]);
+        System.out.println("Transformar em HTML");
 
-            DocumentBuilder builder = factory.newDocumentBuilder();
-            document = builder.parse(datafile);
-            // ...
-            StreamSource stylesource = new StreamSource(stylesheet);
-            Transformer transformer = Factory.newTransformer(stylesource);
-        }*/
+
+        File xslStream = new File("./src/htmlcreator/xsl_stylesheet.xsl");
+        TransformerFactory factory = TransformerFactory.newInstance();
+        Transformer transformer = factory.newTransformer(new StreamSource(xslStream));
+        StringReader reader = new StringReader(dataXML);
+        StreamResult out = new StreamResult("./src/htmlcreator/teste.html");
+        transformer.transform(new javax.xml.transform.stream.StreamSource(reader), out);
+        System.out.println("The generated HTML file is:" + " ./src/htmlcreator/teste.html");
     }
+
     public static void main(String[] args) throws NamingException {
         MainHtmlCreator r = new MainHtmlCreator();
         r.launch_and_wait();

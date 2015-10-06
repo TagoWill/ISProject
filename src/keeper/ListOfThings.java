@@ -127,7 +127,9 @@ public class ListOfThings {
             "description"
     })
     public static class ExtraInfo {
+        @XmlAttribute
         protected String category;
+        @XmlAttribute
         protected String description;
 
         public ExtraInfo(){
