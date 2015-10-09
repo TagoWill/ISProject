@@ -10,53 +10,56 @@ import java.util.Scanner;
  * Created by Tiago on 01/10/2015.
  * Trabalho: Interesacao de Sistemas
  */
-public class MainRequester implements MessageListener {
+public class MainRequester {
 
     private ConnectionFactory cf;
-    private Topic d;
+    private Destination d;
     private Scanner reader;
+    private Session session;
 
     public MainRequester() throws NamingException {
 
         this.cf = InitialContext.doLookup("jms/RemoteConnectionFactory");
-        this.d = InitialContext.doLookup("jms/topic/PlayTopic");
+        this.d = InitialContext.doLookup("jms/queue/PlayQueue");
         reader = new Scanner(System.in);
     }
 
-    @Override
-    public void onMessage(Message msg) {
-
-        TextMessage tmsg = (TextMessage) msg;
-        try {
-            System.out.println("Got message: " + tmsg.getText());
-        } catch (JMSException e) {
-            e.printStackTrace();
-        }
-    }
 
     @SuppressWarnings("all")
     public void launch_and_wait() {
 
         System.out.println("Escreva o que quer pesquisar: (para sair escreva 'q')");
         String lido = reader.nextLine();
-        while(!lido.equals("q")){
-
-            lido = reader.nextLine();
-        }
+        do{
+            if(!lido.equals("q")) {
+                waitResponse(lido);
+                lido = reader.nextLine();
+            }
+        }while(!lido.equals("q"));
 
         System.out.println("Bye bye.");
 
+    }
 
+    public void waitResponse(String texto){
         try (JMSContext jcontext = cf.createContext("tiago", "12")) {
-            jcontext.setClientID("keeper");
-            JMSConsumer consumer = jcontext.createDurableConsumer(d, "keeper");
-            consumer.setMessageListener(this);
-            System.out.println("Press enter to finish...");
-            System.in.read();
-            consumer.close();
-        } catch (JMSRuntimeException | IOException re) {
+            Connection connection = cf.createConnection("tiago", "12");
+            Session session = connection.createSession(false,
+                    Session.AUTO_ACKNOWLEDGE);
+            TemporaryQueue tq = session.createTemporaryQueue();
+            TextMessage message = session.createTextMessage();
+            message.setText(texto);
+            message.setJMSReplyTo(tq);
+            JMSProducer mp = jcontext.createProducer();
+            mp.send(d, message);
+            tq.delete();
+            connection.close();
+        } catch (JMSRuntimeException re) {
             re.printStackTrace();
+        } catch (JMSException e) {
+            e.printStackTrace();
         }
+
     }
 
     public static void main(String[] args)throws NamingException{

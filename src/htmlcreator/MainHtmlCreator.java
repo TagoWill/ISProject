@@ -68,9 +68,9 @@ public class MainHtmlCreator implements MessageListener {
         TransformerFactory factory = TransformerFactory.newInstance();
         Transformer transformer = factory.newTransformer(new StreamSource(xslStream));
         StringReader reader = new StringReader(dataXML);
-        StreamResult out = new StreamResult("./src/htmlcreator/teste.html");
+        StreamResult out = new StreamResult("./src/htmlcreator/full_smartphones_list.html");
         transformer.transform(new javax.xml.transform.stream.StreamSource(reader), out);
-        System.out.println("The generated HTML file is:" + " ./src/htmlcreator/teste.html");
+        System.out.println("The generated HTML file is:" + " ./src/htmlcreator/full_smartphones_list.html");
     }
 
     public static void main(String[] args) throws NamingException {
