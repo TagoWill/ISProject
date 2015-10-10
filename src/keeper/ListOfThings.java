@@ -28,6 +28,17 @@ public class ListOfThings {
 
     }
 
+    @SuppressWarnings("all")
+    public String getSmartphone(String pesquisa){
+        for(ListOfThings.Info p : this.data){
+            if(p.getName().equals(pesquisa)){
+                return p.getPrice();
+            }
+        }
+        return "Nao encontro esse producto";
+    }
+
+    @SuppressWarnings("all")
     public List<Info> getData() {
         if (data == null) {
             data = new ArrayList<>();
@@ -89,7 +100,7 @@ public class ListOfThings {
             return brand;
         }
 
-
+        @SuppressWarnings("all")
         public void setBrand(String brand) {
             this.brand = brand;
         }
@@ -99,6 +110,7 @@ public class ListOfThings {
             return name;
         }
 
+        @SuppressWarnings("all")
         public void addInfo(ExtraInfo aux) {
             if(extrainfo == null){
                 extrainfo = new ArrayList<>();
@@ -106,6 +118,7 @@ public class ListOfThings {
             extrainfo.add(aux);
         }
 
+        @SuppressWarnings("all")
         public void setName(String name) {
             this.name = name;
         }
@@ -115,7 +128,7 @@ public class ListOfThings {
             return price;
         }
 
-
+        @SuppressWarnings("all")
         public void setPrice(String price) {
             this.price = price;
         }
@@ -132,27 +145,33 @@ public class ListOfThings {
         @XmlAttribute
         protected String description;
 
+        @SuppressWarnings("all")
         public ExtraInfo(){
 
         }
 
+        @SuppressWarnings("all")
         public ExtraInfo(String cat, String des){
             this.category = cat;
             this.description = des;
         }
 
+        @SuppressWarnings("all")
         public String getCategory() {
             return category;
         }
 
+        @SuppressWarnings("all")
         public void setCategory(String category) {
             this.category = category;
         }
 
+        @SuppressWarnings("all")
         public String getDescription() {
             return description;
         }
 
+        @SuppressWarnings("all")
         public void setDescription(String description) {
             this.description = description;
         }

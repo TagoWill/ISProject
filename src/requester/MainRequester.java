@@ -10,12 +10,11 @@ import java.util.Scanner;
  * Created by Tiago on 01/10/2015.
  * Trabalho: Interesacao de Sistemas
  */
-public class MainRequester {
+public class MainRequester implements MessageListener{
 
     private ConnectionFactory cf;
     private Destination d;
     private Scanner reader;
-    private Session session;
 
     public MainRequester() throws NamingException {
 
@@ -41,9 +40,11 @@ public class MainRequester {
 
     }
 
+    @SuppressWarnings("all")
     public void waitResponse(String texto){
         try (JMSContext jcontext = cf.createContext("tiago", "12")) {
             Connection connection = cf.createConnection("tiago", "12");
+            connection.start();
             Session session = connection.createSession(false,
                     Session.AUTO_ACKNOWLEDGE);
             TemporaryQueue tq = session.createTemporaryQueue();
@@ -52,10 +53,27 @@ public class MainRequester {
             message.setJMSReplyTo(tq);
             JMSProducer mp = jcontext.createProducer();
             mp.send(d, message);
+
+            MessageConsumer consumer = session.createConsumer(tq);
+
+            consumer.setMessageListener(this);
+            System.in.read();
+
+            consumer.close();
             tq.delete();
+            connection.stop();
             connection.close();
-        } catch (JMSRuntimeException re) {
+        } catch (JMSRuntimeException | JMSException | IOException re) {
             re.printStackTrace();
+        }
+
+    }
+
+    @Override
+    public void onMessage(Message message) {
+        //TextMessage tmsg = (TextMessage) message;
+        try {
+            System.out.println("Messagem: " + ((TextMessage) message).getText());
         } catch (JMSException e) {
             e.printStackTrace();
         }
@@ -68,4 +86,5 @@ public class MainRequester {
         MainRequester r = new MainRequester();
         r.launch_and_wait();
     }
+
 }

@@ -1,11 +1,9 @@
 package keeper;
 
 import javax.jms.*;
-import javax.naming.InitialContext;
 import javax.naming.NamingException;
-import javax.xml.bind.JAXB;
-import java.io.IOException;
-import java.io.StringReader;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Created by Tiago on 30/09/2015.
@@ -18,10 +16,14 @@ public class FatherKeeper extends Thread{
 
     private TopicListener topic;
     private QueueListener queue;
+    private boolean exit = false;
+    private boolean shuttingDown = false;
+    private List<TextMessage> msglist;
 
     public FatherKeeper() throws NamingException {
         super();
 
+        msglist = new LinkedList<>();
         topic = new TopicListener(this);
         queue = new QueueListener(this);
         topic.start();
@@ -31,23 +33,62 @@ public class FatherKeeper extends Thread{
 
     @Override
     public void run(){
-        this.suspend();
+        while(!exit){
+            //this.suspend();
+
+            synchronized (this) {
+                if (shuttingDown) {
+                    try {
+                        System.out.println("Start shutting down...");
+                        shutdown();
+                        exit = true;
+                    } catch (InterruptedException e) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
+                    }
+                    break;
+                }
+            }
+
+            if(msglist.size() > 0 ){
+                //System.out.println("[PAI] recebi isto: "+msglist.size()+" mensagem "+msglist.remove(0));
+                Responder rp;
+                try {
+                    rp = new Responder(this, msglist.remove(0));
+                    rp.start();
+                } catch (NamingException | JMSException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        }
     }
 
     public synchronized void setCapsula(ListOfThings capsula){
         this.capsula = capsula;
     }
 
-    public String getTeste(){
+    public String getSearch(String pesquisa){
+        System.out.println("[PAI] vou pesquisar por " + pesquisa);
         if(capsula == null){
-            return "nao posso enviar nada";
+            return "O crawler nunca correu";
         }
-        return capsula.getData().get(0).getBrand();
+        return capsula.getSmartphone(pesquisa);
+    }
+
+    public void setshutdown(){
+        this.shuttingDown = true;
     }
 
     public void shutdown() throws InterruptedException {
         topic.shutdown();
         queue.shutdown();
-        this.resume();
+        exit = true;
+        //this.resume();
+    }
+
+    public synchronized void addMessagem(TextMessage msg){
+        this.msglist.add(msg);
+        System.out.println("[PAI] Size: "+msglist.size());
     }
 }

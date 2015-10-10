@@ -28,6 +28,16 @@ public class ListOfThings {
 
     }
 
+    @SuppressWarnings("all")
+    public String getSmartphone(String pesquisa){
+        for(ListOfThings.Info p : this.data){
+            if(p.getName().equals(pesquisa)){
+                return p.getPrice();
+            }
+        }
+        return "Nao encontro esse producto";
+    }
+
     public List<Info> getData() {
         if (data == null) {
             data = new ArrayList<>();
@@ -132,6 +142,7 @@ public class ListOfThings {
         @XmlAttribute
         protected String description;
 
+        @SuppressWarnings("all")
         public ExtraInfo(){
 
         }
@@ -141,18 +152,22 @@ public class ListOfThings {
             this.description = des;
         }
 
+        @SuppressWarnings("all")
         public String getCategory() {
             return category;
         }
 
+        @SuppressWarnings("all")
         public void setCategory(String category) {
             this.category = category;
         }
 
+        @SuppressWarnings("all")
         public String getDescription() {
             return description;
         }
 
+        @SuppressWarnings("all")
         public void setDescription(String description) {
             this.description = description;
         }

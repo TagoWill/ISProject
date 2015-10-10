@@ -5,7 +5,6 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.xml.bind.JAXB;
 import java.io.StringReader;
-import java.util.Scanner;
 
 /**
  * Created by Tiago on 30/09/2015.
@@ -16,13 +15,10 @@ public class TopicListener extends Thread implements MessageListener {
     private FatherKeeper pai;
     private ConnectionFactory cf;
     private Topic d;
-    private Scanner sc;
-    private Object monitor = new Object();
 
     public TopicListener(FatherKeeper pai) throws NamingException {
         super();
         this.pai = pai;
-        sc = new Scanner(System.in);
         this.cf = InitialContext.doLookup("jms/RemoteConnectionFactory");
         this.d = InitialContext.doLookup("jms/topic/PlayTopic");
     }
@@ -66,6 +62,7 @@ public class TopicListener extends Thread implements MessageListener {
         }
     }
 
+    @SuppressWarnings("all")
     public void shutdown(){
         //sc.close();
         this.resume();
