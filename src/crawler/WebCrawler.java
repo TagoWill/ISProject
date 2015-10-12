@@ -10,6 +10,7 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import java.io.*;
+import java.net.UnknownHostException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -58,14 +59,23 @@ public class WebCrawler {
         System.out.println("Parsing Site");
         ListOfThings capsula = new ListOfThings();
 
-        Document dom = Jsoup.connect(link).timeout(0).get();
-
-        Elements links = dom.select("a[class=imgC]");
-
-        for(Element e: links){
-            System.out.println("Tamanho da lista: " +capsula.getSize() );
-            capsula.getData().add(extractInformation(e.attr("href"), "Pixmania"));
-        }
+        try {
+        	Document dom = Jsoup.connect(link).timeout(0).get();
+        	Elements links = dom.select("a[class=imgC]");
+        	for(Element e: links){
+                System.out.println("Tamanho da lista: " +capsula.getSize() );
+                capsula.getData().add(extractInformation(e.attr("href"), "Pixmania"));
+            }
+        } catch (UnknownHostException e) {
+        	System.out.print("cheguei aqui");
+        	File input = new File("./pixmania/index.html");
+        	Document localdom = Jsoup.parse(input, "UTF-8", "http://pixmania.pt/");
+        	Elements locallinks = localdom.select("a[class=imgC]");
+        	for(Element e2: locallinks){
+                System.out.println("Tamanho da lista: " +capsula.getSize() );
+                capsula.getData().add(extractInformation(e2.attr("href"), "Pixmania"));
+            }
+    	}
 
         try {
             JAXBContext jc = JAXBContext.newInstance(ListOfThings.class);
@@ -111,8 +121,13 @@ public class WebCrawler {
 
         System.out.println("Popular xml");
         ListOfThings.Info item = new ListOfThings.Info();
-
-        Document dompagina = Jsoup.connect(url).timeout(0).get();
+        Document dompagina;
+        try {
+        	dompagina = Jsoup.connect(url).timeout(0).get();
+        } catch (UnknownHostException | IllegalArgumentException e) {
+        	File input = new File("./pixmania/"+url);
+        	dompagina = Jsoup.parse(input, "UTF-8", "http://pixmania.pt/");
+        }
 
         item.setBrand(dompagina.getElementsByClass("pageTitle")
                 .get(0).getElementsByAttributeValue("itemprop", "brand").text());
