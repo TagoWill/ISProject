@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<listofthings>
+    <info>
+        <brand>SAMSUNG</brand>
+        <name>Galaxy S5 </name>
+        <price>345.0</price>
+        <website>Pixmania</website>
+        <extrainfo category="sistema operativo" description="android kitkat 4.4.2"/>
+        <extrainfo category="processador" description="quad-core 2,5 ghz memória ram: 2 gb"/>
+        <extrainfo category="tecnologia do ecrã" description="capacitivo - super amoled"/>
+        <extrainfo category="tamanho do ecrã" description="5,1&quot; (1920 x 1080 pixeis)"/>
+        <extrainfo category="frequências" description="800/850/900/1800/1900/2100/2600 mhz"/>
+        <extrainfo category="redes" description="4g"/>
+        <extrainfo category="mensagens" description="sms/mms/e-mail (pop/imap)/samsung chaton/função direct call"/>
+        <extrainfo category="bluetooth" description="4.0"/>
+        <extrainfo category="modem integrado" description="débito modem máx. (lte cat.4) : - débito descendente 150 mbps - débito ascendente 50 mbps"/>
+        <extrainfo category="wi-fi" description="802.11 a/b/g/n/ac mimo"/>
+        <extrainfo category="plataforma de download" description="google play store"/>
+        <extrainfo category="compatibilidade redes sociais" description="facebook/twitter"/>
+        <extrainfo category="aplicações integradas" description="s-voice / s-voice drive kids mode air view smart view smart stay google chrome lite, google chrome youtube gmail google hangout google map"/>
+        <extrainfo category="línguas" description="52"/>
+        <extrainfo category="sensor" description="máquina fotográfica atrás + câmara frontal"/>
+        <extrainfo category="resolução máxima (em pixeis)" description="máquina fotográfica (atrás): 16 megapixeis câmara frontal: 2 megapixeis"/>
+        <extrainfo category="flash" description="sim"/>
+        <extrainfo category="funções de fotografia" description="modo autofocus inteligente: gestão das desfocagens sound &amp; shot: adicionar som a uma fotografia modo hdr melhor fotografia: seleção da melhor fotografia entre 8 cine foto: elementos animados numa fotografia modo borracha: suprimir um elemento numa fotografia"/>
+        <extrainfo category="resolução de vídeo" description="ultra hd – 2160p"/>
+        <extrainfo category="formatos de vídeo gravado" description="mpeg4, h,263, h,264, divx, wmv"/>
+        <extrainfo category="formatos de som" description="mp3, amr, aac, aac+, eaac+, wma, ogg, flac"/>
+        <extrainfo category="navegação gps" description="a-gps"/>
+        <extrainfo category="usb" description="3.0"/>
+        <extrainfo category="entradas/saídas de som" description="jack 3,5mm"/>
+        <extrainfo category="memória interna" description="16 gb"/>
+        <extrainfo category="slot para cartões de memória externo" description="sim"/>
+        <extrainfo category="tipos de cartão de memória lidos" description="microsdhc (até 64 gb)"/>
+        <extrainfo category="mãos-livres" description="sim"/>
+        <extrainfo category="autonomia em conversação" description="até 21 horas"/>
+        <extrainfo category="autonomia em stand-by" description="até 390 horas"/>
+        <extrainfo category="bateria" description="li-ion 2800 mah"/>
+        <extrainfo category="dimensões" description="a: 14,2 cm l: 7,25 cm p: 0,81 cm"/>
+        <extrainfo category="peso" description="145 g"/>
+        <extrainfo category="índice das" description="das cabeça: 0,562 w/kg das corpo: 0,406 w/kg"/>
+    </info>
+    <info>
+        <brand>LG</brand>
+        <name>G3 </name>
+        <price>295.0</price>
+        <website>Pixmania</website>
+        <extrainfo category="sistema operativo" description="android 4.4.2 kitkat"/>
+        <extrainfo category="processador" description="snapdragon 801 ac quad core 2,5 ghz"/>
+        <extrainfo category="teclado" description="virtual"/>
+        <extrainfo category="tecnologia do ecrã" description="tátil capacitivo"/>
+        <extrainfo category="tamanho do ecrã" description="5,5&quot; (2560 x 1440 pixeis)"/>
+        <extrainfo category="número de cores" description="16,7 milhões"/>
+        <extrainfo category="frequências" description="gsm (2g) : 850 / 900 / 1800 / 1900 mhz umts (3g) : 850 / 900 / 1900 / 2100 mhz lte (4g) : 700 / 800 / 900 / 1800 / 2100/ 2300/ 2600 mhz"/>
+        <extrainfo category="redes" description="4g"/>
+        <extrainfo category="mensagens" description="sms/mms/mms vídeo/mensagens instantâneas"/>
+        <extrainfo category="bluetooth" description="4.0 le"/>
+        <extrainfo category="wi-fi" description="802.11 a/b/g/n/ac wifi direct"/>
+        <extrainfo category="plataforma de download" description="android market"/>
+        <extrainfo category="aplicações integradas" description="widgets aplicação de navegação gps função quickremote (telecomando universal) função knock code modo convidado"/>
+        <extrainfo category="sensor" description="com estabilizador ótico ois+ e autofocus"/>
+        <extrainfo category="resolução máxima (em pixeis)" description="13 mp"/>
+        <extrainfo category="zoom" description="digital"/>
+        <extrainfo category="flash" description="dual led"/>
+        <extrainfo category="funções de fotografia" description="live zooming geotagging"/>
+        <extrainfo category="resolução de vídeo" description="4k ultra hd (3840 x 2160) 30fps"/>
+        <extrainfo category="formatos de vídeo gravado" description="mpeg-4"/>
+        <extrainfo category="funções de vídeo" description="vídeo streaming formatos de leitura: h263, mpeg4, h.264, xvid, vc-1, vp8/9"/>
+        <extrainfo category="formatos de som" description="aac/aac+/eaac+/amr-nb/amr-wb/ flac/mp3/midi/vorbis/pcm/ac3/ec3/wma"/>
+        <extrainfo category="rádio fm" description="sim, com rds"/>
+        <extrainfo category="navegação gps" description="gps/agps"/>
+        <extrainfo category="usb" description="usb 2.0 + usb otg"/>
+        <extrainfo category="entradas/saídas de som" description="jack 3,5mm"/>
+        <extrainfo category="agenda" description="1000"/>
+        <extrainfo category="memória interna" description="16 gb (memória interna) 10 gb (memória utilizador)"/>
+        <extrainfo category="slot para cartões de memória externo" description="sim"/>
+        <extrainfo category="tipos de cartão de memória lidos" description="sim, micro sd (até 128 gb)"/>
+        <extrainfo category="mãos-livres" description="sim"/>
+        <extrainfo category="gravação de voz" description="sim"/>
+        <extrainfo category="autonomia em conversação" description="até 8 h"/>
+        <extrainfo category="autonomia em stand-by" description="até 310 h"/>
+        <extrainfo category="bateria" description="lithium- ion 3000 mah (amovível)"/>
+        <extrainfo category="dimensões" description="146,3 x 74,6 x 9,3 mm"/>
+        <extrainfo category="peso" description="153,7g"/>
+        <extrainfo category="acessórios fornecidos" description="bateria, cabo data micro-usb/ carregador, kit mãos livres"/>
+        <extrainfo category="índice das" description="0,291 w/kg (cabeça)"/>
+    </info>
+    <info>
+        <brand>SAMSUNG</brand>
+        <name>Galaxy S5 </name>
+        <price>414.01</price>
+        <website>Pixmania</website>
+        <extrainfo category="sistema operativo" description="android kitkat 4.4.2"/>
+        <extrainfo category="processador" description="quad-core 2,5 ghz memória ram: 2 gb"/>
+        <extrainfo category="tecnologia do ecrã" description="capacitivo - super amoled"/>
+        <extrainfo category="tamanho do ecrã" description="5,1&quot; (1920 x 1080 pixeis)"/>
+        <extrainfo category="frequências" description="800/850/900/1800/1900/2100/2600 mhz"/>
+        <extrainfo category="redes" description="4g"/>
+        <extrainfo category="mensagens" description="sms/mms/e-mail (pop/imap)/samsung chaton/função direct call"/>
+        <extrainfo category="bluetooth" description="4.0"/>
+        <extrainfo category="modem integrado" description="débito modem máx. (lte cat.4) : - débito descendente 150 mbps - débito ascendente 50 mbps"/>
+        <extrainfo category="wi-fi" description="802.11 a/b/g/n/ac mimo"/>
+        <extrainfo category="plataforma de download" description="google play store"/>
+        <extrainfo category="compatibilidade redes sociais" description="facebook/twitter"/>
+        <extrainfo category="aplicações integradas" description="s-voice / s-voice drive kids mode air view smart view smart stay google chrome lite, google chrome youtube gmail google hangout google map"/>
+        <extrainfo category="línguas" description="52"/>
+        <extrainfo category="sensor" description="máquina fotográfica atrás + câmara frontal"/>
+        <extrainfo category="resolução máxima (em pixeis)" description="máquina fotográfica (atrás) : 16 megapixeis câmara frontal: 2 megapixeis"/>
+        <extrainfo category="flash" description="sim"/>
+        <extrainfo category="funções de fotografia" description="modo autofocus inteligente: gestão das desfocagens sound &amp; shot: adicionar som a uma fotografia modo hdr melhor fotografia: seleção da melhor fotografia entre 8 cine foto: elementos animados numa fotografia modo borracha: suprimir um elemento numa fotografia"/>
+        <extrainfo category="resolução de vídeo" description="ultra hd – 2160p"/>
+        <extrainfo category="formatos de vídeo gravado" description="mpeg4, h,263, h,264, divx, wmv"/>
+        <extrainfo category="formatos de som" description="mp3, amr, aac, aac+, eaac+, wma, ogg, flac"/>
+        <extrainfo category="navegação gps" description="a-gps"/>
+        <extrainfo category="usb" description="3.0"/>
+        <extrainfo category="entradas/saídas de som" description="jack 3,5mm"/>
+        <extrainfo category="memória interna" description="16 gb"/>
+        <extrainfo category="slot para cartões de memória externo" description="sim"/>
+        <extrainfo category="tipos de cartão de memória lidos" description="microsdhc (até 64 gb)"/>
+        <extrainfo category="mãos-livres" description="sim"/>
+        <extrainfo category="autonomia em conversação" description="até 21 horas"/>
+        <extrainfo category="autonomia em stand-by" description="até 390 horas"/>
+        <extrainfo category="bateria" description="li-ion 2800 mah"/>
+        <extrainfo category="dimensões" description="a: 14,2 cm l: 7,25 cm p: 0,81 cm"/>
+        <extrainfo category="peso" description="145 g"/>
+        <extrainfo category="índice das" description="das cabeça: 0,562 w/kg das corpo: 0,406 w/kg"/>
+    </info>
+    <info>
+        <brand>LG</brand>
+        <name>G3 </name>
+        <price>309.0</price>
+        <website>Pixmania</website>
+        <extrainfo category="sistema operativo" description="android 4.4.2 kitkat"/>
+        <extrainfo category="processador" description="snapdragon 801 ac quad core 2,5 ghz"/>
+        <extrainfo category="teclado" description="virtual"/>
+        <extrainfo category="tecnologia do ecrã" description="tátil capacitivo"/>
+        <extrainfo category="tamanho do ecrã" description="5,5&quot; (2560 x 1440 pixeis)"/>
+        <extrainfo category="número de cores" description="16,7 milhões"/>
+        <extrainfo category="frequências" description="gsm (2g) : 850 / 900 / 1800 / 1900 mhz umts (3g) : 850 / 900 / 1900 / 2100 mhz lte (4g) : 700 / 800 / 900 / 1800 / 2100/ 2300/ 2600 mhz"/>
+        <extrainfo category="redes" description="4g"/>
+        <extrainfo category="mensagens" description="sms/mms/mms vídeo/mensagens instantâneas"/>
+        <extrainfo category="bluetooth" description="4.0 le"/>
+        <extrainfo category="wi-fi" description="802.11 a/b/g/n/ac wifi direct"/>
+        <extrainfo category="plataforma de download" description="android market"/>
+        <extrainfo category="aplicações integradas" description="widgets aplicação de navegação gps função quickremote (telecomando universal) função knock code modo convidado"/>
+        <extrainfo category="sensor" description="com estabilizador ótico ois+ e autofocus"/>
+        <extrainfo category="resolução máxima (em pixeis)" description="13 mp"/>
+        <extrainfo category="zoom" description="digital"/>
+        <extrainfo category="flash" description="dual led"/>
+        <extrainfo category="funções de fotografia" description="live zooming geotagging"/>
+        <extrainfo category="resolução de vídeo" description="4k ultra hd (3840 x 2160) 30fps"/>
+        <extrainfo category="formatos de vídeo gravado" description="mpeg-4"/>
+        <extrainfo category="funções de vídeo" description="vídeo streaming formatos de leitura: h263, mpeg4, h.264, xvid, vc-1, vp8/9"/>
+        <extrainfo category="formatos de som" description="aac/aac+/eaac+/amr-nb/amr-wb/ flac/mp3/midi/vorbis/pcm/ac3/ec3/wma"/>
+        <extrainfo category="rádio fm" description="sim, com rds"/>
+        <extrainfo category="navegação gps" description="gps/agps"/>
+        <extrainfo category="usb" description="usb 2.0 + usb otg"/>
+        <extrainfo category="entradas/saídas de som" description="jack 3,5mm"/>
+        <extrainfo category="agenda" description="1000"/>
+        <extrainfo category="memória interna" description="16 gb (memória interna) 10 gb (memória utilizador)"/>
+        <extrainfo category="slot para cartões de memória externo" description="sim"/>
+        <extrainfo category="tipos de cartão de memória lidos" description="sim, micro sd (até 128 gb)"/>
+        <extrainfo category="mãos-livres" description="sim"/>
+        <extrainfo category="gravação de voz" description="sim"/>
+        <extrainfo category="autonomia em conversação" description="até 8 h"/>
+        <extrainfo category="autonomia em stand-by" description="até 310 h"/>
+        <extrainfo category="bateria" description="lithium- ion 3000 mah (amovível)"/>
+        <extrainfo category="dimensões" description="146,3 x 74,6 x 9,3 mm"/>
+        <extrainfo category="peso" description="153,7g"/>
+        <extrainfo category="acessórios fornecidos" description="bateria, cabo data micro-usb/ carregador, kit mãos livres"/>
+        <extrainfo category="índice das" description="0,291 w/kg (cabeça)"/>
+    </info>
+    <info>
+        <brand>SONY</brand>
+        <name>Xperia M4 Aqua Dual </name>
+        <price>299.0</price>
+        <website>Pixmania</website>
+        <extrainfo category="processador" description="qualcomm msm8939 snapdragon 615 octa-core"/>
+        <extrainfo category="sistema operativo" description="android 5 lollipop"/>
+        <extrainfo category="tipo de ecrã" description="ecrã ips hd"/>
+        <extrainfo category="tamanho do ecrã" description="5 polegadas (720 x 1280 píxeis)"/>
+        <extrainfo category="redes" description="4 g"/>
+        <extrainfo category="wifi" description="wi-fi 802.11 a/b/g/n e nfc"/>
+        <extrainfo category="bluetooth" description="bluetooth 4.1"/>
+        <extrainfo category="câmara traseira" description="13 mp com estabilizador, flash e autofoco"/>
+        <extrainfo category="câmara frontal" description="5 mp"/>
+        <extrainfo category="ligações" description="micro-usb"/>
+        <extrainfo category="memória interna" description="16 gb"/>
+        <extrainfo category="leitor de cartões de memória" description="microsd até 32 gb"/>
+        <extrainfo category="bateria" description="bateria 2400 mah"/>
+        <extrainfo category="autonomia" description="até 2 dias com o modo stamina"/>
+        <extrainfo category="dimensões" description="145,5 x 72,59 x 7,3 mm"/>
+        <extrainfo category="peso" description="135 g"/>
+        <extrainfo category="acessórios fornecidos" description="carregador, auriculares, cabo micro-usb"/>
+        <extrainfo category="taxa de absorção específica" description="0,7 w/kg a das (taxa de absorção específica) dos telemóveis quantifica o nível de exposição máxima do utilizador às ondas eletromagnéticas para uma utilização junto dos ouvidos. a regulamentação francesa estabelece que a das não ultrapasse os 2 w/kg."/>
+    </info>
+    <info>
+        <brand>SAMSUNG</brand>
+        <name>Galaxy S6 </name>
+        <price>498.0</price>
+        <website>Pixmania</website>
+        <extrainfo category="processador" description="octo core 2,1 ghz"/>
+        <extrainfo category="sistema operativo" description="android lollipop 5.0"/>
+        <extrainfo category="tipo de ecrã" description="ecrã capacitivo super amoled - 16 milhões de cores acelerómetro, sensor magnético, sensor de luminosidade, de proximidade"/>
+        <extrainfo category="tamanho do ecrã" description="5,1&quot; - qhd 2560 x 1440 píxeis – 577 ppi"/>
+        <extrainfo category="redes" description="2g (gprs / edge) : 850 / 900 / 1800 / 1900 mhz 3g (hspa+) : 850 / 900 / 1900 / 2100 mhz 4g (lte) : 800/850/900/1800/2100/2600 mhz fluxo modem máx. (lte cat.6) : download 300 mbps / upload 50 mbps"/>
+        <extrainfo category="wifi" description="802.11 a/b/g/n/ac dual band 2,4/5 ghz"/>
+        <extrainfo category="bluetooth" description="bluetooth 4.1, com tecnologia nfc"/>
+        <extrainfo category="câmara traseira" description="16 megapíxeis – autofoco - ois, flash controlo por voz, focagem seletiva, hdr, movimento rápido, panorama, foto virtual, pro, câmara lenta"/>
+        <extrainfo category="câmara frontal" description="5 megapíxeis selfie, selfie panorama, controlo por movimento, controlo por voz, intervalo de captura, foto virtual"/>
+        <extrainfo category="câmara traseira" description="16 megapíxeis"/>
+        <extrainfo category="câmara frontal" description="5 megapíxeis"/>
+        <extrainfo category="formatos lidos" description="vídeo: h.263, h.264, mpeg4, wmv, h.265 (hevc) áudio: mp3, ogg, wma, amr, flac imagens: agif, bmp, gif, jpeg, png, wbmp"/>
+        <extrainfo category="ligações" description="usb 2.0, wi-fi direct, screen mirroring, ficha jack 3,5mm, gps / glonass"/>
+        <extrainfo category="memória interna" description="32 gb + armazenamento cloud one drive 15 gb + 100 gb incluídos (2 anos)"/>
+        <extrainfo category="leitor de cartões de memória" description="não"/>
+        <extrainfo category="bateria" description="li-ion 2550 mah"/>
+        <extrainfo category="autonomia" description="em comunicação: 17 horas"/>
+        <extrainfo category="dimensões" description="143,4 x 70,5 x 6,8 mm"/>
+        <extrainfo category="peso" description="138 g"/>
+        <extrainfo category="taxa de absorção específica" description="das cabeça: 0,382 w/kg, das corpo: 0,499 w/kg"/>
+    </info>
+    <info>
+        <brand>SAMSUNG</brand>
+        <name>Galaxy S6 Edge Plus </name>
+        <price>665.0</price>
+        <website>Pixmania</website>
+        <extrainfo category="processador" description="octo core 2,1 ghz"/>
+        <extrainfo category="sistema operativo" description="android 5.0 lollipop / interface utilizador samsung touchwiz + etiquedge"/>
+        <extrainfo category="tipo de ecrã" description="ecrã capacitivo super amoled"/>
+        <extrainfo category="tamanho do ecrã" description="5,7&quot; (2560 x 1440 píxeis)"/>
+        <extrainfo category="redes" description="4g"/>
+        <extrainfo category="wifi" description="802.11 a/b/g/n/ac (2,4/5 ghz) mimo"/>
+        <extrainfo category="bluetooth" description="bluetooth 4.2 le e nfc"/>
+        <extrainfo category="câmara traseira" description="16 megapíxeis com autofoco e estabilização ois"/>
+        <extrainfo category="câmara frontal" description="5 megapíxeis"/>
+        <extrainfo category="câmara traseira" description="até uhd"/>
+        <extrainfo category="formatos lidos" description="vídeo: mp4, m4v ,3gp, 3g2, wmv, asf, avi, flv, mkv, webm áudio: mp3, m4a, 3ga, aac, ogg, oga, wav, wma, amr, awb, flac, mid, midi, xmf, mxmf, imy, rtttl, rtx, ota imagem: agif, bmp, gif, jpeg, jpg, png, wbmp"/>
+        <extrainfo category="ligações" description="usb 2.0, ficha jack 3,5 mm"/>
+        <extrainfo category="memória interna" description="32 gb"/>
+        <extrainfo category="leitor de cartões de memória" description="não"/>
+        <extrainfo category="bateria" description="bateria de lítio polímero 3000 mah"/>
+        <extrainfo category="autonomia" description="até 22 horas em comunicação"/>
+        <extrainfo category="dimensões" description="154,4 x 75,8 x 6,9 mm"/>
+        <extrainfo category="peso" description="153 g"/>
+        <extrainfo category="acessórios fornecidos" description="adaptador de alimentação"/>
+        <extrainfo category="taxa de absorção específica" description="cabeça: 0,216 w/kg corpo: 0,580 w/kg a das (taxa de absorção específica) dos telemóveis quantifica o nível de exposição máxima do utilizador às ondas eletromagnéticas para uma utilização junto dos ouvidos. a regulamentação francesa estabelece que a das não ultrapasse os 2 w/kg."/>
+    </info>
+    <info>
+        <brand>SAMSUNG</brand>
+        <name>Galaxy S6 Edge </name>
+        <price>569.99</price>
+        <website>Pixmania</website>
+        <extrainfo category="processador" description="octo core 2,1 ghz"/>
+        <extrainfo category="sistema operativo" description="android lollipop 5.0"/>
+        <extrainfo category="tipo de ecrã" description="ecrã capacitivo super amoled - 16 milhões de cores acelerómetro, sensor magnético, sensor de luminosidade, de proximidade"/>
+        <extrainfo category="tamanho do ecrã" description="5,1&quot; - qhd 2560 x 1440 píxeis – 577 ppi"/>
+        <extrainfo category="redes" description="2g (gprs / edge) : 850 / 900 / 1800 / 1900 mhz 3g (hspa+) : 850 / 900 / 1900 / 2100 mhz 4g (lte) : 800/850/900/1800/2100/2600 mhz fluxo modem máx. (lte cat.6) : download 300 mbps / upload 50 mbps"/>
+        <extrainfo category="wifi" description="802.11 a/b/g/n/ac dual band 2,4/5 ghz"/>
+        <extrainfo category="bluetooth" description="bluetooth 4.1, com tecnologia nfc"/>
+        <extrainfo category="câmara traseira" description="16 megapíxeis – autofoco - ois, flash controlo por voz, focagem seletiva, hdr, movimento rápido, panorama, foto virtual, pro, câmara lenta"/>
+        <extrainfo category="câmara frontal" description="5 megapíxeis selfie, selfie panorama, controlo por movimento, controlo por voz, intervalo de captura, foto virtual"/>
+        <extrainfo category="câmara traseira" description="16 megapíxeis"/>
+        <extrainfo category="câmara frontal" description="5 megapíxeis"/>
+        <extrainfo category="formatos lidos" description="vídeo: h.263, h.264, mpeg4, wmv, h.265 (hevc) áudio: mp3, ogg, wma, amr, flac imagens: agif, bmp, gif, jpeg, png, wbmp"/>
+        <extrainfo category="ligações" description="usb 2.0, wi-fi direct, screen mirroring, ficha jack 3,5mm, gps / glonass"/>
+        <extrainfo category="memória interna" description="32 gb + armazenamento cloud one drive 15 gb + 100 gb incluídos (2 anos)"/>
+        <extrainfo category="leitor de cartões de memória" description="não"/>
+        <extrainfo category="bateria" description="li-ion 2600 mah"/>
+        <extrainfo category="dimensões" description="142,1 x 70,1 x 7,0 mm"/>
+        <extrainfo category="peso" description="130 g"/>
+        <extrainfo category="taxa de absorção específica" description="cabeça: 0,334 w/kg, corpo: 0,594 w/kg a das (taxa de absorção específica) dos telemóveis quantifica o nível de exposição máxima do utilizador às ondas eletromagnéticas para uma utilização junto dos ouvidos. a regulamentação francesa estabelece que a das não ultrapasse os 2 w/kg."/>
+    </info>
+    <info>
+        <brand>SAMSUNG</brand>
+        <name>Galaxy S6 </name>
+        <price>498.0</price>
+        <website>Pixmania</website>
+        <extrainfo category="processador" description="octo core 2,1 ghz"/>
+        <extrainfo category="sistema operativo" description="android lollipop 5.0"/>
+        <extrainfo category="tipo de ecrã" description="ecrã capacitivo super amoled - 16 milhões de cores acelerómetro, sensor magnético, sensor de luminosidade, de proximidade"/>
+        <extrainfo category="tamanho do ecrã" description="5,1&quot; - qhd 2560 x 1440 píxeis – 577 ppi"/>
+        <extrainfo category="redes" description="2g (gprs / edge) : 850 / 900 / 1800 / 1900 mhz 3g (hspa+) : 850 / 900 / 1900 / 2100 mhz 4g (lte) : 800/850/900/1800/2100/2600 mhz fluxo modem máx. (lte cat.6) : download 300 mbps / upload 50 mbps"/>
+        <extrainfo category="wifi" description="802.11 a/b/g/n/ac dual band 2,4/5 ghz"/>
+        <extrainfo category="bluetooth" description="bluetooth 4.1, com tecnologia nfc"/>
+        <extrainfo category="câmara traseira" description="16 megapíxeis – autofoco - ois, flash controlo por voz, focagem seletiva, hdr, movimento rápido, panorama, foto virtual, pro, câmara lenta"/>
+        <extrainfo category="câmara frontal" description="5 megapíxeis selfie, selfie panorama, controlo por movimento, controlo por voz, intervalo de captura, foto virtual"/>
+        <extrainfo category="câmara traseira" description="16 megapíxeis"/>
+        <extrainfo category="câmara frontal" description="5 megapíxeis"/>
+        <extrainfo category="formatos lidos" description="vídeo: h.263, h.264, mpeg4, wmv, h.265 (hevc) áudio: mp3, ogg, wma, amr, flac imagens: agif, bmp, gif, jpeg, png, wbmp"/>
+        <extrainfo category="ligações" description="usb 2.0, wi-fi direct, screen mirroring, ficha jack 3,5mm, gps / glonass"/>
+        <extrainfo category="memória interna" description="32 gb + armazenamento cloud one drive 15 gb + 100 gb incluídos (2 anos)"/>
+        <extrainfo category="leitor de cartões de memória" description="não"/>
+        <extrainfo category="bateria" description="li-ion 2550 mah"/>
+        <extrainfo category="autonomia" description="em comunicação: 17 horas"/>
+        <extrainfo category="dimensões" description="143,4 x 70,5 x 6,8 mm"/>
+        <extrainfo category="peso" description="138 g"/>
+        <extrainfo category="taxa de absorção específica" description="das cabeça: 0,382 w/kg, das corpo: 0,499 w/kg"/>
+    </info>
+    <info>
+        <brand>SAMSUNG</brand>
+        <name>GALAXY Xcover 3 </name>
+        <price>212.52</price>
+        <website>Pixmania</website>
+        <extrainfo category="processador" description="quad-core 1,2 ghz"/>
+        <extrainfo category="sistema operativo" description="android kit kat 4.4"/>
+        <extrainfo category="tipo de ecrã" description="tft capacitivo (compatível com luvas) 16 m de cores - acelerómetro, sensor de proximidade, sensor magnético"/>
+        <extrainfo category="tamanho do ecrã" description="4,5&quot; - 800 x 480 píxeis (wvga)"/>
+        <extrainfo category="redes" description="2g (gprs / edge): 850 / 900 / 1800 / 1900 mhz 3g+ (hspa+) ; 850 / 900 / 1900 / 2100 mhz 4g (cat.4): 800 / 850 / 900 / 1800 / 2100 / 2600 mhz"/>
+        <extrainfo category="wifi" description="wi-fi (802.11 b/g/n)"/>
+        <extrainfo category="bluetooth" description="4.0"/>
+        <extrainfo category="câmara traseira" description="5 megapíxeis - zoom x4, modos panorama, bracketing, aquático, desporto"/>
+        <extrainfo category="câmara frontal" description="2 megapíxeis"/>
+        <extrainfo category="câmara traseira" description="5 megapíxeis - vídeo hd @720p (1280 x 720 píxeis)"/>
+        <extrainfo category="câmara frontal" description="2 megapíxeis"/>
+        <extrainfo category="formatos lidos" description="vídeos: mpeg4, h.264, h.263 áudio: mp3, amr, ogg, flac fotos: wbmp, bmp, gif, a-gif, jpeg, png"/>
+        <extrainfo category="ligações" description="usb 2.0, wi-fi direct, sincronização pc samsung kies, nfc, jack 3,5 mm, radio fm, gps + a-gps + glonass"/>
+        <extrainfo category="memória interna" description="8 gb"/>
+        <extrainfo category="leitor de cartões de memória" description="microsd até 128 gb"/>
+        <extrainfo category="bateria" description="ião de lítio 2200 mah"/>
+        <extrainfo category="autonomia" description="comunicação: até 10 horas, suspensão: até 262 horas (modo ultrapoupança de energia)"/>
+        <extrainfo category="dimensões" description="132,9 x 70,1 x 9,95 mm"/>
+        <extrainfo category="peso" description="154 g"/>
+        <extrainfo category="taxa de absorção específica" description="das cabeça: 0,711 w/kg, das corpo: 0,394 w/kg"/>
+    </info>
+</listofthings>
