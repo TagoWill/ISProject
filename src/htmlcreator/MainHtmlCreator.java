@@ -3,6 +3,7 @@ package htmlcreator;
 import javax.jms.*;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
+import javax.sound.midi.SysexMessage;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
@@ -33,7 +34,7 @@ public class MainHtmlCreator implements MessageListener {
 
         TextMessage tmsg = (TextMessage) msg;
         try {
-            System.out.println("Got message: " + tmsg.getText());
+            //System.out.println("Got message: " + tmsg.getText());
             try {
                 createHtml(tmsg.getText());
             } catch (TransformerException | IOException e) {
@@ -62,7 +63,6 @@ public class MainHtmlCreator implements MessageListener {
     public void createHtml(String dataXML) throws TransformerException, IOException {
 
         System.out.println("Transformar em HTML");
-
 
         File xslStream = new File("./src/htmlcreator/xsl_stylesheet.xsl");
         TransformerFactory factory = TransformerFactory.newInstance();

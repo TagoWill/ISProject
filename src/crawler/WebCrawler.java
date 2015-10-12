@@ -63,7 +63,8 @@ public class WebCrawler {
         Elements links = dom.select("a[class=imgC]");
 
         for(Element e: links){
-            capsula.getData().add(extractInformation(e.attr("href")));
+            System.out.println("Tamanho da lista: " +capsula.getSize() );
+            capsula.getData().add(extractInformation(e.attr("href"), "Pixmania"));
         }
 
         try {
@@ -106,7 +107,7 @@ public class WebCrawler {
         out.close();
     }
 
-    private static ListOfThings.Info extractInformation(String url) throws IOException{
+    private static ListOfThings.Info extractInformation(String url, String website) throws IOException{
 
         System.out.println("Popular xml");
         ListOfThings.Info item = new ListOfThings.Info();
@@ -116,12 +117,21 @@ public class WebCrawler {
         item.setBrand(dompagina.getElementsByClass("pageTitle")
                 .get(0).getElementsByAttributeValue("itemprop", "brand").text());
 
-        item.setName(dompagina.getElementsByClass("pageTitle")
-                .get(0).getElementsByAttributeValue("itemprop", "name").text());
+        String words[] = dompagina.getElementsByClass("pageTitle")
+                .get(0).getElementsByAttributeValue("itemprop", "name").text().split("-");
+
+        String word = words[0];
+        item.setName(word);
 
         //Tem que ser em double nao String..
-        item.setPrice(dompagina.getElementsByClass("currentPrice")
-                .get(0).getElementsByAttributeValue("itemprop", "price").text());
+        word = dompagina.getElementsByClass("currentPrice")
+                .get(0).getElementsByAttributeValue("itemprop", "price").text();
+
+        word=word.replace(',','.');
+        Double preco = Double.parseDouble(word.substring(0,word.length()-2));
+        item.setPrice(preco);
+
+        item.setWebsite(website);
 
         Elements elementos = dompagina.getElementsByClass("simpleTable");
         for (Element el : elementos) {
@@ -133,16 +143,10 @@ public class WebCrawler {
             List<Element> description = tagtd.subList(0, tagtd.size());
 
             for (int i = 0; i < description.size(); i++) {
-                if(category.get(i).text().equalsIgnoreCase("sistema operativo") || category.get(i).text().equalsIgnoreCase("processador") || category.get(i).text().equalsIgnoreCase("Tamanho do ecrã"))
+                //if(category.get(i).text().equalsIgnoreCase("sistema operativo") || category.get(i).text().equalsIgnoreCase("processador") || category.get(i).text().equalsIgnoreCase("Tamanho do ecrã"))
                     item.addInfo(new ListOfThings.ExtraInfo(category.get(i).text().toLowerCase(), description.get(i).text().toLowerCase()));
             }
         }
-
-        //dompagina.getElementsByClass("descTxt").text();
-
-        //dompagina.getElementsByClass("customList").get(0).getElementsByAttributeValue("itemprop", "description").text();
-
-        //System.out.println(dompagina);
 
         return item;
     }

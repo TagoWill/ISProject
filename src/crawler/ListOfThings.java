@@ -32,10 +32,16 @@ public class ListOfThings {
     public String getSmartphone(String pesquisa){
         for(ListOfThings.Info p : this.data){
             if(p.getName().equals(pesquisa)){
-                return p.getPrice();
+                return p.getPrice().toString();
             }
         }
         return "Nao encontro esse producto";
+    }
+
+    public int getSize(){
+        if(data == null)
+            return 0;
+        return data.size();
     }
 
     public List<Info> getData() {
@@ -81,13 +87,15 @@ public class ListOfThings {
             "brand",
             "name",
             "price",
+            "website",
             "extrainfo"
     })
     public static class Info{
 
         protected String brand;
         protected String name;
-        protected String price;
+        protected Double price;
+        protected String website;
         protected List<ListOfThings.ExtraInfo> extrainfo;
 
         public Info(){
@@ -121,13 +129,20 @@ public class ListOfThings {
         }
 
         @SuppressWarnings("all")
-        public String getPrice() {
+        public Double getPrice() {
             return price;
         }
 
-
-        public void setPrice(String price) {
+        public void setPrice(Double price) {
             this.price = price;
+        }
+
+        public String getWebsite() {
+            return website;
+        }
+
+        public void setWebsite(String website) {
+            this.website = website;
         }
     }
 

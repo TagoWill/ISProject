@@ -1,11 +1,12 @@
-<?xml version="1.0" encoding="ISO-8859-9"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <html xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xsl:version="1.0">
+  <!-- encoding="ISO-8859-9" -->
   <head><title>Smartphone INFO</title>
   </head>
   <body>
     <h2>Smartphones</h2>
       <table border="1">
-        <tr bgcolor="#9acd32">
+        <tr bgcolor="#FF8C00">
           <th>Brand</th>
           <th>Name</th>
           <th>Price</th>

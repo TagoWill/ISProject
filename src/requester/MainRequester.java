@@ -57,6 +57,7 @@ public class MainRequester implements MessageListener{
             MessageConsumer consumer = session.createConsumer(tq);
 
             consumer.setMessageListener(this);
+            System.out.println("Carregar enter antes de voltar a escrever outro produto");
             System.in.read();
 
             consumer.close();
@@ -73,7 +74,7 @@ public class MainRequester implements MessageListener{
     public void onMessage(Message message) {
         //TextMessage tmsg = (TextMessage) message;
         try {
-            System.out.println("Messagem: " + ((TextMessage) message).getText());
+            System.out.println("Preco: " + ((TextMessage) message).getText());
         } catch (JMSException e) {
             e.printStackTrace();
         }
