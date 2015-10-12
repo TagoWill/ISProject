@@ -5,9 +5,10 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
 /**
- * Created by Tiago on 30/09/2015.
- * Trabalho: Interesacao de Sistemas
+ * Created by Daniel Bastos e Tiago Andrade on 30/09/2015.
+ * Trabalho: Integracao de Sistemas
  */
+
 public class QueueListener extends Thread implements MessageListener {
 
     private FatherKeeper pai;

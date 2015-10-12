@@ -8,10 +8,10 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Created by Tiago on 30/09/2015.
- * Trabalho: Interesacao de Sistemas
- * jms/RemoteConnectionFactory", "jms/topic/PlayTopic"
+ * Created by Daniel Bastos e Tiago Andrade on 30/09/2015.
+ * Trabalho: Integracao de Sistemas
  */
+
 public class FatherKeeper extends Thread{
 
     private ListOfSmartphones capsula;

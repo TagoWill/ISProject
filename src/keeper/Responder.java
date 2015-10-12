@@ -5,9 +5,10 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
 /**
- * Created by Tiago on 09/10/2015.
- *
+ * Created by Daniel Bastos e Tiago Andrade on 09/10/2015.
+ * Trabalho: Integracao de Sistemas
  */
+
 public class Responder extends Thread{
     private FatherKeeper pai;
     private ConnectionFactory cf;

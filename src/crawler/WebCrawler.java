@@ -17,9 +17,10 @@ import java.nio.file.Paths;
 import java.util.List;
 
 /**
- * Created by Tiago on 28/09/2015.
- * Trabalho: Interesacao de Sistemas
+ * Created by Daniel Bastos e Tiago Andrade on 28/09/2015.
+ * Trabalho: Integracao de Sistemas
  */
+
 public class WebCrawler {
 
     public static StringWriter xmltext;

@@ -4,9 +4,10 @@ import javax.naming.NamingException;
 import java.io.IOException;
 
 /**
- * Created by Tiago on 30/09/2015.
- * Trabalho: Interesacao de Sistemas
+ * Created by Daniel Bastos e Tiago Andrade on 30/09/2015.
+ * Trabalho: Integracao de Sistemas
  */
+
 public class MainKeeper{
 
     @SuppressWarnings("all")

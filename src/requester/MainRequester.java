@@ -7,9 +7,10 @@ import java.io.IOException;
 import java.util.Scanner;
 
 /**
- * Created by Tiago on 01/10/2015.
- * Trabalho: Interesacao de Sistemas
+ * Created by Daniel Bastos e Tiago Andrade on 01/10/2015.
+ * Trabalho: Integracao de Sistemas
  */
+
 public class MainRequester implements MessageListener{
 
     private ConnectionFactory cf;

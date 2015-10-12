@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Tiago on 28/09/2015.
- * Trabalho: Interesacao de Sistemas
+ * Created by Daniel Bastos e Tiago Andrade on 28/09/2015.
+ * Trabalho: Integracao de Sistemas
  */
 
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -137,6 +137,7 @@ public class ListOfSmartphones {
             this.price = price;
         }
 
+        @SuppressWarnings("all")
         public String getWebsite() {
             return website;
         }

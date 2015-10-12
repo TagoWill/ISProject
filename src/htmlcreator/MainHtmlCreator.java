@@ -3,7 +3,6 @@ package htmlcreator;
 import javax.jms.*;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
-import javax.sound.midi.SysexMessage;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
@@ -15,9 +14,10 @@ import java.io.StringReader;
 import javax.xml.transform.stream.StreamResult;
 
 /**
- * Created by Tiago on 30/09/2015.
- * Trabalho: Interesacao de Sistemas
+ * Created by Daniel Bastos e Tiago Andrade on 30/09/2015.
+ * Trabalho: Integracao de Sistemas
  */
+
 public class MainHtmlCreator implements MessageListener {
 
     private ConnectionFactory cf;
