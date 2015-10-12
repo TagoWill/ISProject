@@ -18,7 +18,7 @@
           <th>Battery</th>
           <th>Weight</th>
         </tr>
-        <xsl:for-each select="listofthings/info">
+        <xsl:for-each select="listofsmartphones/smartphone">
           <tr>
             <td><xsl:value-of select="brand"/></td>
             <td><xsl:value-of select="name"/></td>
