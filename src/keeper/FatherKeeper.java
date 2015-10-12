@@ -12,7 +12,7 @@ import java.util.List;
  */
 public class FatherKeeper extends Thread{
 
-    private ListOfThings capsula;
+    private crawler.ListOfThings capsula;
 
     private TopicListener topic;
     private QueueListener queue;
@@ -64,7 +64,7 @@ public class FatherKeeper extends Thread{
         }
     }
 
-    public synchronized void setCapsula(ListOfThings capsula){
+    public synchronized void setCapsula(crawler.ListOfThings capsula){
         this.capsula = capsula;
     }
 

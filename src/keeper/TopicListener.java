@@ -39,7 +39,7 @@ public class TopicListener extends Thread implements MessageListener {
         System.out.println("[TopicListener]unmarshal");
 
         StringReader reader = new StringReader(text);
-        ListOfThings items = JAXB.unmarshal(reader, ListOfThings.class);
+        crawler.ListOfThings items = JAXB.unmarshal(reader, crawler.ListOfThings.class);
 
         System.out.println("[TopicListener]Guardar no pai");
         pai.setCapsula(items);
