@@ -57,7 +57,7 @@ public class WebCrawler {
     private static void processWebPage(String link) throws IOException{
 
         System.out.println("Parsing Site");
-        ListOfThings capsula = new ListOfThings();
+        ListOfSmartphones capsula = new ListOfSmartphones();
 
         try {
             do {
@@ -81,7 +81,7 @@ public class WebCrawler {
     	}
 
         try {
-            JAXBContext jc = JAXBContext.newInstance(ListOfThings.class);
+            JAXBContext jc = JAXBContext.newInstance(ListOfSmartphones.class);
             Marshaller ms = jc.createMarshaller();
             ms.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
             xmltext = new StringWriter();
@@ -120,10 +120,10 @@ public class WebCrawler {
         out.close();
     }
 
-    private static ListOfThings.Info extractInformation(String url, String website) throws IOException{
+    private static ListOfSmartphones.Info extractInformation(String url, String website) throws IOException{
 
         System.out.println("Popular xml");
-        ListOfThings.Info item = new ListOfThings.Info();
+        ListOfSmartphones.Info item = new ListOfSmartphones.Info();
         Document dompagina;
         try {
         	dompagina = Jsoup.connect(url).timeout(0).get();
@@ -162,7 +162,7 @@ public class WebCrawler {
 
             for (int i = 0; i < description.size(); i++) {
                 //if(category.get(i).text().equalsIgnoreCase("sistema operativo") || category.get(i).text().equalsIgnoreCase("processador") || category.get(i).text().equalsIgnoreCase("Tamanho do ecrã"))
-                    item.addInfo(new ListOfThings.ExtraInfo(category.get(i).text().toLowerCase(), description.get(i).text().toLowerCase()));
+                    item.addInfo(new ListOfSmartphones.ExtraInfo(category.get(i).text().toLowerCase(), description.get(i).text().toLowerCase()));
             }
         }
 

@@ -1,5 +1,7 @@
 package keeper;
 
+import crawler.ListOfSmartphones;
+
 import javax.jms.*;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
@@ -39,7 +41,7 @@ public class TopicListener extends Thread implements MessageListener {
         System.out.println("[TopicListener]unmarshal");
 
         StringReader reader = new StringReader(text);
-        crawler.ListOfThings items = JAXB.unmarshal(reader, crawler.ListOfThings.class);
+        ListOfSmartphones items = JAXB.unmarshal(reader, ListOfSmartphones.class);
 
         System.out.println("[TopicListener]Guardar no pai");
         pai.setCapsula(items);

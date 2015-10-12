@@ -1,5 +1,7 @@
 package keeper;
 
+import crawler.ListOfSmartphones;
+
 import javax.jms.*;
 import javax.naming.NamingException;
 import java.util.LinkedList;
@@ -12,7 +14,7 @@ import java.util.List;
  */
 public class FatherKeeper extends Thread{
 
-    private crawler.ListOfThings capsula;
+    private ListOfSmartphones capsula;
 
     private TopicListener topic;
     private QueueListener queue;
@@ -64,7 +66,7 @@ public class FatherKeeper extends Thread{
         }
     }
 
-    public synchronized void setCapsula(crawler.ListOfThings capsula){
+    public synchronized void setCapsula(ListOfSmartphones capsula){
         this.capsula = capsula;
     }
 

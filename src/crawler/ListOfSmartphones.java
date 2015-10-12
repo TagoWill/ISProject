@@ -13,10 +13,10 @@ import java.util.List;
 @XmlType(name = "", propOrder = {
         "data"
 })
-@XmlRootElement(name = "listofthings")
-public class ListOfThings {
-    @XmlElement(name = "info", required = true)
-    protected List<ListOfThings.Info> data;
+@XmlRootElement(name = "listofsmartphones")
+public class ListOfSmartphones {
+    @XmlElement(name = "smartphone", required = true)
+    protected List<ListOfSmartphones.Info> data;
     @XmlAttribute(name = "timestamp")
     protected Long timestamp;
     @XmlAttribute(name = "timezone")
@@ -24,13 +24,13 @@ public class ListOfThings {
     @XmlAttribute(name = "version")
     protected Double version;
 
-    public ListOfThings(){
+    public ListOfSmartphones(){
 
     }
 
     @SuppressWarnings("all")
     public String getSmartphone(String pesquisa){
-        for(ListOfThings.Info p : this.data){
+        for(ListOfSmartphones.Info p : this.data){
             if(p.getName().equals(pesquisa)){
                 return p.getPrice().toString();
             }
@@ -96,7 +96,7 @@ public class ListOfThings {
         protected String name;
         protected Double price;
         protected String website;
-        protected List<ListOfThings.ExtraInfo> extrainfo;
+        protected List<ListOfSmartphones.ExtraInfo> extrainfo;
 
         public Info(){
 
