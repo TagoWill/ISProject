@@ -58,14 +58,18 @@ public class WebCrawler {
         System.out.println("Parsing Site");
         ListOfThings capsula = new ListOfThings();
 
-        Document dom = Jsoup.connect(link).timeout(0).get();
+        do {
+            Document dom = Jsoup.connect(link).timeout(0).get();
 
-        Elements links = dom.select("a[class=imgC]");
+            Elements links = dom.select("a[class=imgC]");
 
-        for(Element e: links){
-            System.out.println("Tamanho da lista: " +capsula.getSize() );
-            capsula.getData().add(extractInformation(e.attr("href"), "Pixmania"));
-        }
+
+            for (Element e : links) {
+                System.out.println("Tamanho da lista: " + capsula.getSize());
+                capsula.getData().add(extractInformation(e.attr("href"), "Pixmania"));
+            }
+            link = dom.getElementsByClass("next").get(0).attr("href");
+        }while(capsula.getSize()<15);
 
         try {
             JAXBContext jc = JAXBContext.newInstance(ListOfThings.class);
