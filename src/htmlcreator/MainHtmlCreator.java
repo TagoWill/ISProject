@@ -3,14 +3,18 @@ package htmlcreator;
 import javax.jms.*;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
+import javax.xml.XMLConstants;
+import javax.xml.validation.Validator;
+import org.xml.sax.SAXException;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.stream.StreamSource;
+import javax.xml.validation.Schema;
+import javax.xml.validation.SchemaFactory;
 import java.io.File;
 import java.io.IOException;
 import java.io.StringReader;
-
 import javax.xml.transform.stream.StreamResult;
 
 /**
@@ -61,20 +65,42 @@ public class MainHtmlCreator implements MessageListener {
     }
 
     public void createHtml(String dataXML) throws TransformerException, IOException {
-
-        System.out.println("Transformar em HTML");
-
-        File xslStream = new File("./src/htmlcreator/xsl_stylesheet.xsl");
-        TransformerFactory factory = TransformerFactory.newInstance();
-        Transformer transformer = factory.newTransformer(new StreamSource(xslStream));
-        StringReader reader = new StringReader(dataXML);
-        StreamResult out = new StreamResult("./src/htmlcreator/full_smartphones_list.html");
-        transformer.transform(new javax.xml.transform.stream.StreamSource(reader), out);
-        System.out.println("The generated HTML file is:" + " ./src/htmlcreator/full_smartphones_list.html");
+    	System.out.println("Validando xml com xsd");
+    	if(validateXMLSchema(dataXML, "./src/crawler/smartphones.xsd"))
+    	{
+    		System.out.println("Validou");
+    		System.out.println("Transformar em HTML");
+            
+            File xslStream = new File("./src/htmlcreator/xsl_stylesheet.xsl");
+            TransformerFactory factory = TransformerFactory.newInstance();
+            Transformer transformer = factory.newTransformer(new StreamSource(xslStream));
+            StringReader reader = new StringReader(dataXML);
+            StreamResult out = new StreamResult("./src/htmlcreator/full_smartphones_list.html");
+            transformer.transform(new javax.xml.transform.stream.StreamSource(reader), out);
+            System.out.println("The generated HTML file is:" + " ./src/htmlcreator/full_smartphones_list.html");
+    	} else{
+    		System.out.println("NAO Validou");
+    	}
     }
 
     public static void main(String[] args) throws NamingException {
         MainHtmlCreator r = new MainHtmlCreator();
         r.launch_and_wait();
+    }
+    
+    
+    public static boolean validateXMLSchema(String xml, String xsd){
+        
+        try {
+            SchemaFactory factory = 
+                    SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
+            Schema schema = factory.newSchema(new File(xsd));
+            Validator validator = schema.newValidator();
+            validator.validate(new StreamSource(new StringReader(xml)));
+        } catch (IOException | SAXException e) {
+            System.out.println("Exception: "+e.getMessage());
+            return false;
+        }
+        return true;
     }
 }
