@@ -5,7 +5,17 @@ import crawler.ListOfSmartphones;
 import javax.jms.*;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
+import javax.xml.XMLConstants;
 import javax.xml.bind.JAXB;
+import javax.xml.transform.stream.StreamSource;
+import javax.xml.validation.Schema;
+import javax.xml.validation.SchemaFactory;
+import javax.xml.validation.Validator;
+
+import org.xml.sax.SAXException;
+
+import java.io.File;
+import java.io.IOException;
 import java.io.StringReader;
 
 /**
@@ -38,15 +48,21 @@ public class TopicListener extends Thread implements MessageListener {
         }
     }
 
-    private void takeInformation(String text) {
-        System.out.println("[TopicListener]unmarshal");
-
-        StringReader reader = new StringReader(text);
-        ListOfSmartphones items = JAXB.unmarshal(reader, ListOfSmartphones.class);
-
-        System.out.println("[TopicListener]Guardar no pai");
-        pai.setCapsula(items);
-        //System.out.println("Oi: "+items.getData().get(0).getName()+" - "+items.getData().get(0).getPrice());
+    private void takeInformation(String dataXML) {
+       
+    	System.out.println("[TopicListener]Validando xml com xsd");
+    	if(validateXMLSchema(dataXML, "./src/crawler/smartphones.xsd"))
+    	{
+    		System.out.println("[TopicListener]Validou");
+    		System.out.println("[TopicListener]Unmarshal");
+            StringReader reader = new StringReader(dataXML);
+            ListOfSmartphones items = JAXB.unmarshal(reader, ListOfSmartphones.class);
+            System.out.println("[TopicListener]Guardar no pai");
+            pai.setCapsula(items);
+            //System.out.println("Oi: "+items.getData().get(0).getName()+" - "+items.getData().get(0).getPrice());
+    	} else{
+    		System.out.println("NAO Validou");
+    	}
     }
 
     @SuppressWarnings("all")
@@ -74,5 +90,19 @@ public class TopicListener extends Thread implements MessageListener {
     @Override
     public void run() {
         launch_and_wait();
+    }
+    
+    public static boolean validateXMLSchema(String xml, String xsd){ 
+        try {
+            SchemaFactory factory = 
+                    SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
+            Schema schema = factory.newSchema(new File(xsd));
+            Validator validator = schema.newValidator();
+            validator.validate(new StreamSource(new StringReader(xml)));
+        } catch (IOException | SAXException e) {
+            System.out.println("Exception: "+e.getMessage());
+            return false;
+        }
+        return true;
     }
 }
