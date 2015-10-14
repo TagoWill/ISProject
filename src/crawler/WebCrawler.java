@@ -65,7 +65,6 @@ public class WebCrawler {
                 Document dom = Jsoup.connect(link).timeout(0).get();
                 Elements links = dom.select("a[class=imgC]");
                 for (Element e : links) {
-                    System.out.println("Tamanho da lista: " + capsula.getSize());
                     capsula.getData().add(extractInformation(e.attr("href"), "Pixmania"));
                 }
                 link = dom.getElementsByClass("next").get(0).attr("href");
@@ -76,7 +75,6 @@ public class WebCrawler {
         	Document localdom = Jsoup.parse(input, "UTF-8", "http://pixmania.pt/");
         	Elements locallinks = localdom.select("a[class=imgC]");
         	for(Element e2: locallinks){
-                System.out.println("Tamanho da lista: " +capsula.getSize() );
                 capsula.getData().add(extractInformation(e2.attr("href"), "Pixmania"));
             }
     	}
@@ -140,7 +138,9 @@ public class WebCrawler {
                 .get(0).getElementsByAttributeValue("itemprop", "name").text().split("-");
 
         String word = words[0];
-        item.setName(word);
+        //item.setName(word.trim());
+        item.setName(dompagina.getElementsByClass("pageTitle")
+                .get(0).getElementsByAttributeValue("itemprop", "name").text().trim());
 
         //Tem que ser em double nao String..
         word = dompagina.getElementsByClass("currentPrice")

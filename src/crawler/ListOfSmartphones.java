@@ -3,6 +3,8 @@ package crawler;
 import javax.xml.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Created by Daniel Bastos e Tiago Andrade on 28/09/2015.
@@ -30,10 +32,21 @@ public class ListOfSmartphones {
 
     @SuppressWarnings("all")
     public String getSmartphone(String pesquisa){
-        for(ListOfSmartphones.Info p : this.data){
-            if(p.getName().equals(pesquisa)){
-                return p.getPrice().toString();
+        for(ListOfSmartphones.Info smartphone : this.data){
+            Pattern p;
+            Matcher m;
+            int contador = 0;
+            String words[] = pesquisa.split(" ");
+            for(int i=0;i<words.length; i++){
+                p = Pattern.compile(words[i], Pattern.CASE_INSENSITIVE);
+                m = p.matcher(smartphone.getName());
+                if(m.find()) {
+                    contador++;
+                }
             }
+            if(contador == words.length)
+                return smartphone.getBrand()+" : "+smartphone.getName()+" : "+smartphone.getPrice().toString();
+
         }
         return "Nao encontro esse producto";
     }

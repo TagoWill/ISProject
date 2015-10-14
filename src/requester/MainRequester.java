@@ -28,14 +28,15 @@ public class MainRequester implements MessageListener{
     @SuppressWarnings("all")
     public void launch_and_wait() {
 
-        System.out.println("Escreva o que quer pesquisar: (para sair escreva 'q')");
+        System.out.println("Escreva o que quer pesquisar: (para sair click enter)");
         String lido = reader.nextLine();
         do{
-            if(!lido.equals("q")) {
+            if(!lido.equals("")) {
                 waitResponse(lido);
+                System.out.println("Escreva o que quer pesquisar: (para sair click enter)");
                 lido = reader.nextLine();
             }
-        }while(!lido.equals("q"));
+        }while(!lido.equals(""));
 
         System.out.println("Bye bye.");
 
@@ -75,7 +76,7 @@ public class MainRequester implements MessageListener{
     public void onMessage(Message message) {
         //TextMessage tmsg = (TextMessage) message;
         try {
-            System.out.println("Preco: " + ((TextMessage) message).getText());
+            System.out.println("-> " + ((TextMessage) message).getText());
         } catch (JMSException e) {
             e.printStackTrace();
         }
