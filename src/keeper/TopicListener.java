@@ -61,7 +61,8 @@ public class TopicListener extends Thread implements MessageListener {
 
             consumer.close();
         } catch (JMSRuntimeException re) {
-            re.printStackTrace();
+            //re.printStackTrace();
+            System.out.println("[TopicListener]JMS desligado");
         }
     }
 

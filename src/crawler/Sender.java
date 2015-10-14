@@ -30,7 +30,8 @@ public class Sender {
             JMSProducer mp = jcontext.createProducer();
             mp.send(d, text);
         } catch (JMSRuntimeException re) {
-            re.printStackTrace();
+            //re.printStackTrace();
+            System.out.println("JMS desligado");
         }
     }
 }

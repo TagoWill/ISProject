@@ -47,7 +47,8 @@ public class QueueListener extends Thread implements MessageListener {
 
             consumer.close();
         } catch (JMSRuntimeException re) {
-            re.printStackTrace();
+            System.out.println("[QueueListener]JMS desligado");
+            //re.printStackTrace();
         }
     }
 

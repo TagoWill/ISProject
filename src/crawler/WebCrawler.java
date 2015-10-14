@@ -15,6 +15,7 @@ import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
+import java.util.Scanner;
 
 /**
  * Created by Daniel Bastos e Tiago Andrade on 28/09/2015.
@@ -24,6 +25,10 @@ import java.util.List;
 public class WebCrawler {
 
     public static StringWriter xmltext;
+    public static String WEBSITE_PIXAMANIA = "http://www.pixmania.pt/telefones/telemovel/smartphone-19883-s.html";
+    public static String WEBSITE_WORTEN = "https://www.worten.pt/inicio/worten-mobile/smartphones-1.html";
+    public static ListOfSmartphones capsula;
+    public static Scanner sc;
 
     public static void main(String[] args) throws IOException{
 
@@ -40,12 +45,55 @@ public class WebCrawler {
                     System.out.println("Erro: Fcheiro nao apagado");
                 }
             } catch (NamingException e) {
-                e.printStackTrace();
+                //e.printStackTrace();
+                System.out.println("JMS desligado");
             }
 
         }else {
-            System.out.println("Ficheiro nao existe");
-            processWebPage("http://www.pixmania.pt/telefones/telemovel/smartphone-19883-s.html");
+            System.out.println("Escolha as opcoes:\n1.Pixmania 2.worten");
+            sc = new Scanner(System.in);
+            int escolha = sc.nextInt();
+            AbstractFilter teste;
+            if(escolha == 1) {
+                teste = new PixmaniaFilter(WEBSITE_PIXAMANIA);
+            }
+            else {
+                teste = new WortenFilter(WEBSITE_WORTEN);
+            }
+            capsula = teste.capsula;
+            sendProcess();
+        }
+    }
+
+    private static void sendProcess(){
+        try {
+            JAXBContext jc = JAXBContext.newInstance(ListOfSmartphones.class);
+            Marshaller ms = jc.createMarshaller();
+            ms.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+            xmltext = new StringWriter();
+            ms.marshal(capsula, xmltext);
+
+            int contador = 0;
+            boolean deu = false;
+            while (!deu && contador < 5) {
+                try {
+                    System.out.println("Enviar para jmstopic");
+                    Sender teste = new Sender();
+                    teste.send(xmltext.toString());
+                    deu = true;
+                } catch (NamingException e) {
+                    System.out.println("Falhou envio.. JMS desligado");
+                    contador++;
+                    //e.printStackTrace();
+                }
+            }
+            if(!deu){
+                writeXmlInFile(xmltext.toString());
+            }
+        }catch(JAXBException e){
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
@@ -55,7 +103,7 @@ public class WebCrawler {
         return new String(encoded, encoding);
     }
 
-    private static void processWebPage(String link) throws IOException{
+    /*private static void processWebPage(String link) throws IOException{
 
         System.out.println("Parsing Site");
         ListOfSmartphones capsula = new ListOfSmartphones();
@@ -70,7 +118,6 @@ public class WebCrawler {
                 link = dom.getElementsByClass("next").get(0).attr("href");
             }while(capsula.getSize()<15);
         } catch (UnknownHostException e) {
-        	System.out.print("cheguei aqui");
         	File input = new File("./pixmania/index.html");
         	Document localdom = Jsoup.parse(input, "UTF-8", "http://pixmania.pt/");
         	Elements locallinks = localdom.select("a[class=imgC]");
@@ -95,9 +142,9 @@ public class WebCrawler {
                     teste.send(xmltext.toString());
                     deu = true;
                 } catch (NamingException e) {
-                    System.out.println("Falhou envio..");
+                    System.out.println("Falhou envio.. JMS desligado");
                     contador++;
-                    e.printStackTrace();
+                    //e.printStackTrace();
                 }
             }
             if(!deu){
@@ -108,7 +155,7 @@ public class WebCrawler {
         }
 
 
-    }
+    }*/
 
     private static void writeXmlInFile(String s) throws IOException{
 
@@ -119,7 +166,7 @@ public class WebCrawler {
         out.close();
     }
 
-    private static ListOfSmartphones.Info extractInformation(String url, String website) throws IOException{
+    /*private static ListOfSmartphones.Info extractInformation(String url, String website) throws IOException{
 
         System.out.println("Popular xml");
         ListOfSmartphones.Info item = new ListOfSmartphones.Info();
@@ -168,5 +215,5 @@ public class WebCrawler {
         }
 
         return item;
-    }
+    }*/
 }

@@ -67,7 +67,8 @@ public class MainRequester implements MessageListener{
             connection.stop();
             connection.close();
         } catch (JMSRuntimeException | JMSException | IOException re) {
-            re.printStackTrace();
+            //re.printStackTrace();
+            System.out.println("JMS desligado");
         }
 
     }

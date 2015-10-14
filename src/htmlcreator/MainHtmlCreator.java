@@ -78,6 +78,7 @@ public class MainHtmlCreator implements MessageListener {
             StreamResult out = new StreamResult("./src/htmlcreator/full_smartphones_list.html");
             transformer.transform(new javax.xml.transform.stream.StreamSource(reader), out);
             System.out.println("The generated HTML file is:" + " ./src/htmlcreator/full_smartphones_list.html");
+
     	} else{
     		System.out.println("NAO Validou");
     	}
