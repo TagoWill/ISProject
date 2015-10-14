@@ -12,6 +12,7 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.stream.StreamSource;
 import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
+import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 import java.io.StringReader;
@@ -77,10 +78,10 @@ public class MainHtmlCreator implements MessageListener {
             StringReader reader = new StringReader(dataXML);
             StreamResult out = new StreamResult("./src/htmlcreator/full_smartphones_list.html");
             transformer.transform(new javax.xml.transform.stream.StreamSource(reader), out);
-            System.out.println("The generated HTML file is:" + " ./src/htmlcreator/full_smartphones_list.html");
-
+            System.out.println("The generated HTML file is:" + "./src/htmlcreator/full_smartphones_list.html");
+            Desktop.getDesktop().browse(new File("src/htmlcreator/full_smartphones_list.html").toURI());
     	} else{
-    		System.out.println("NAO Validou");
+    		System.out.println("Nao Validou");
     	}
     }
 
