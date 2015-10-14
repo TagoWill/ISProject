@@ -5,14 +5,13 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-
-import java.io.File;
 import java.io.IOException;
 import java.net.UnknownHostException;
 import java.util.List;
 
 /**
- * Created by tagow on 14/10/2015.
+ * Created by Daniel Bastos e Tiago Andrade on 14/10/2015.
+ * Trabalho: Integracao de Sistemas
  */
 public class WortenFilter extends AbstractFilter{
 
@@ -48,6 +47,7 @@ public class WortenFilter extends AbstractFilter{
         }
     }
 
+    @SuppressWarnings("all")
     private ListOfSmartphones.Info extractInformation(String url, String website) throws IOException{
 
         System.out.println("Popular xml");
@@ -60,16 +60,10 @@ public class WortenFilter extends AbstractFilter{
             //dompagina = Jsoup.parse(input, "UTF-8", "http://pixmania.pt/");
         }
 
-        //item.setBrand(dompagina.getElementsByClass("product-name")
-         //       .get(0).getElementsByAttributeValue("itemprop", "brand").text());
 
         item.setBrand("");
 
-        //String words[] = dompagina.getElementsByClass("pageTitle")
-         //       .get(0).getElementsByAttributeValue("itemprop", "name").text().split("-");
 
-        //String word = words[0];
-        //item.setName(word.trim());
         item.setName(dompagina.getElementsByClass("product-name").get(0).text().trim());
 
         //Tem que ser em double nao String..

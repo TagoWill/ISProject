@@ -12,7 +12,8 @@ import java.net.UnknownHostException;
 import java.util.List;
 
 /**
- * Created by tagow on 14/10/2015.
+ * Created by Daniel Bastos e Tiago Andrade on 14/10/2015.
+ * Trabalho: Integracao de Sistemas
  */
 public class PixmaniaFilter extends AbstractFilter{
 
@@ -45,6 +46,7 @@ public class PixmaniaFilter extends AbstractFilter{
         }
     }
 
+    @SuppressWarnings("all")
     private ListOfSmartphones.Info extractInformation(String url, String website) throws IOException{
 
         System.out.println("Popular xml");
