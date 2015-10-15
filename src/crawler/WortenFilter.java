@@ -5,6 +5,8 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+
+import java.io.File;
 import java.io.IOException;
 import java.net.UnknownHostException;
 import java.util.List;
@@ -37,13 +39,12 @@ public class WortenFilter extends AbstractFilter{
                 //link = dom.getElementsByClass("next").get(0).attr("href");
            // }while(capsula.getSize()<15);
         } catch (UnknownHostException e) {
-            /*File input = new File("./pixmania/index.html");
-            Document localdom = Jsoup.parse(input, "UTF-8", "http://pixmania.pt/");
-            Elements locallinks = localdom.select("a[class=imgC]");
-            for(Element e2: locallinks){
-                capsula.getData().add(extractInformation(e2.attr("href"), "Pixmania"));
-            }*/
-            System.out.println("Nao ha paginas offline");
+            File input = new File("./worten/index.html");
+            Document dom = Jsoup.parse(input, "UTF-8", "http://worten.pt/");
+            Elements links = dom.getElementsByClass("product-name");
+            for (Element er : links) {
+                capsula.getData().add(extractInformation(er.select("a").attr("href"), "worten"));
+            }
         }
     }
 
@@ -56,8 +57,8 @@ public class WortenFilter extends AbstractFilter{
         try {
             dompagina = Jsoup.connect(url).timeout(0).get();
         } catch (UnknownHostException | IllegalArgumentException e) {
-            //File input = new File("./pixmania/"+url);
-            //dompagina = Jsoup.parse(input, "UTF-8", "http://pixmania.pt/");
+            File input = new File("./worten/"+url);
+            dompagina = Jsoup.parse(input, "UTF-8", "http://worten.pt/");
         }
 
 
