@@ -61,11 +61,16 @@ public class WortenFilter extends AbstractFilter{
             dompagina = Jsoup.parse(input, "UTF-8", "http://worten.pt/");
         }
 
+        String words[] = dompagina.getElementsByClass("product-name").get(0).text().split(" ");
 
-        item.setBrand("");
+        item.setBrand(words[1]);
 
+        String juntar = "";
+        for (int i = 2; i < words.length; i++) {
+            juntar = juntar + words[i] + " ";
+        }
 
-        item.setName(dompagina.getElementsByClass("product-name").get(0).text().trim());
+        item.setName(juntar);
 
         //Tem que ser em double nao String..
         String word = dompagina.getElementsByClass("price").get(0).text();

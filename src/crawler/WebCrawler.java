@@ -19,7 +19,7 @@ public class WebCrawler {
 
     public static StringWriter xmltext;
     public static String WEBSITE_PIXAMANIA = "http://www.pixmania.pt/telefones/telemovel/smartphone-19883-s.html";
-    public static String WEBSITE_WORTEN = "https://www.worten.pt/inicio/worten-mobile/smartphones-1.html";
+    public static String WEBSITE_WORTEN = "https://www.worten.pt/inicio/worten-mobile/smartphones-1.html?cat=7459";
     public static ListOfSmartphones capsula;
     public static Scanner sc;
 

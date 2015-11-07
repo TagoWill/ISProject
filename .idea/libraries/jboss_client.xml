@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="jboss-client">
     <CLASSES>
-      <root url="jar://$USER_HOME$/Downloads/wildfly-9.0.1.Final/wildfly-9.0.1.Final/bin/client/jboss-client.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/wildfly-9.0.2.Final/bin/client/jboss-client.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
