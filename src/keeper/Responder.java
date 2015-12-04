@@ -24,12 +24,10 @@ public class Responder extends Thread{
 
     @SuppressWarnings("all")
     public void launch_and_wait() {
-
+        // Vai buscar a resposta ao pedido ao Father Keeper e envia-a para o resquester através do buffer de resposta do pedido.
         try (Connection connection = cf.createConnection("tiago", "12")) {
             connection.start();
-            Session session = connection.createSession(false,
-                    Session.AUTO_ACKNOWLEDGE);
-
+            Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
             MessageProducer mp = session.createProducer(null);
             TextMessage message = session.createTextMessage();
             message.setText(search(((TextMessage) dst).getText()));
@@ -47,6 +45,7 @@ public class Responder extends Thread{
     }
 
     private String search(String pesquisa){
+        // Vai buscar o resultado do pedido ao Father Keeper.
         return pai.getSearch(pesquisa);
     }
 

@@ -24,7 +24,7 @@ public class QueueListener extends Thread implements MessageListener {
 
     @Override
     public void onMessage(Message msg) {
-
+        // Quando recebe uma mensagem do resquester envia o pedido para o Father Keeper.
         TextMessage tmsg = (TextMessage) msg;
         //System.out.println("Got message: " + tmsg.getText());
         try {
@@ -38,7 +38,7 @@ public class QueueListener extends Thread implements MessageListener {
 
     @SuppressWarnings("all")
     public void launch_and_wait() {
-
+        
         try (JMSContext jcontext = cf.createContext("tiago", "12")) {
             JMSConsumer consumer = jcontext.createConsumer(d);
             consumer.setMessageListener(this);

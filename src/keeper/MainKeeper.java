@@ -12,6 +12,7 @@ public class MainKeeper{
 
     @SuppressWarnings("all")
     public static void main(String[] args) throws NamingException, IOException, InterruptedException {
+    	// Cria o Father Keeper e fica à espera de input do utilizador para terminar.
         FatherKeeper fk = new FatherKeeper();
         System.out.print("Para desligar click enter\n");
         System.in.read();

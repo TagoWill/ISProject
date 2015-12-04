@@ -23,8 +23,8 @@ public class FatherKeeper extends Thread{
     private List<TextMessage> msglist;
 
     public FatherKeeper() throws NamingException {
+        // Cria 3 Threads: Ele próprio, a Topic e a Queue para estarem constantemente a tratar de informacao.
         super();
-
         msglist = new LinkedList<>();
         topic = new TopicListener(this);
         queue = new QueueListener(this);
@@ -51,7 +51,7 @@ public class FatherKeeper extends Thread{
                     break;
                 }
             }
-
+            // Verifica se existem pedidos a tratar. Se existirem entao cria uma thread Responder para ser enviada a resposta.
             if(msglist.size() > 0 ){
                 //System.out.println("[PAI] recebi isto: "+msglist.size()+" mensagem "+msglist.remove(0));
                 Responder rp;
@@ -71,6 +71,9 @@ public class FatherKeeper extends Thread{
     }
 
     public String getSearch(String pesquisa){
+        // Pedido de pesquisa recebido por um requester que vai ser tratado através da
+        // chamada do método getSmartphone do objecto capsula, que é do tipo ListOfSmartphones
+        // com a string pesquisa que contém o input do resquester
         System.out.println("[PAI] vou pesquisar por " + pesquisa);
         if(capsula == null){
             return "O crawler nunca correu";
@@ -90,6 +93,7 @@ public class FatherKeeper extends Thread{
     }
 
     public synchronized void addMessagem(TextMessage msg){
+        // Adiciona pedido do resquester à lista de pedidos a responder.
         this.msglist.add(msg);
         System.out.println("[PAI] Size: "+msglist.size());
     }

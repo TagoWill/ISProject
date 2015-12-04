@@ -17,8 +17,6 @@ import java.util.List;
  */
 public class WortenFilter extends AbstractFilter{
 
-
-
     public WortenFilter(String string){
         try {
             capsula = new ListOfSmartphones();

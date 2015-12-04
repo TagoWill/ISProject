@@ -27,7 +27,7 @@ public class MainRequester implements MessageListener{
 
     @SuppressWarnings("all")
     public void launch_and_wait() {
-
+        // Recebe input do utilizador para iniciar uma pesquisa.
         System.out.println("Escreva o que quer pesquisar: (para sair click enter)");
         String lido = reader.nextLine();
         do{
@@ -44,11 +44,11 @@ public class MainRequester implements MessageListener{
 
     @SuppressWarnings("all")
     public void waitResponse(String texto){
+        // Fica à espera de resposta à sua pesquisa.
         try (JMSContext jcontext = cf.createContext("tiago", "12")) {
             Connection connection = cf.createConnection("tiago", "12");
             connection.start();
-            Session session = connection.createSession(false,
-                    Session.AUTO_ACKNOWLEDGE);
+            Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
             TemporaryQueue tq = session.createTemporaryQueue();
             TextMessage message = session.createTextMessage();
             message.setText(texto);
@@ -75,6 +75,7 @@ public class MainRequester implements MessageListener{
 
     @Override
     public void onMessage(Message message) {
+        // Recebe a resposta à sua pesquisa e faz print no ecra.
         //TextMessage tmsg = (TextMessage) message;
         try {
             System.out.println("-> " + ((TextMessage) message).getText());

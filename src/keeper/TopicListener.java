@@ -39,6 +39,7 @@ public class TopicListener extends Thread implements MessageListener {
     }
 
     private void takeInformation(String text) {
+        // Recebe o xml do crawler e faz o unmarshal. Guarda o Java Object correspondente no FatherKeeper.
         System.out.println("[TopicListener]unmarshal");
 
         StringReader reader = new StringReader(text);
@@ -51,7 +52,7 @@ public class TopicListener extends Thread implements MessageListener {
 
     @SuppressWarnings("all")
     public void launch_and_wait() {
-
+        // Mensagem durável -> Tem de ser consumida por todos os subscritores
         try (JMSContext jcontext = cf.createContext("tiago", "12")) {
             jcontext.setClientID("keeper");
             JMSConsumer consumer = jcontext.createDurableConsumer(d, "keeper");

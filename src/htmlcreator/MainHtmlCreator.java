@@ -66,6 +66,7 @@ public class MainHtmlCreator implements MessageListener {
     }
 
     public void createHtml(String dataXML) throws TransformerException, IOException {
+        // Cria o ficheiro HTML e abre-o no browser. Para isso valida o xml com o xsd e depois junta-a ao stylesheet para criar o HTML.
     	System.out.println("Validando xml com xsd");
     	if(validateXMLSchema(dataXML, "./src/crawler/smartphones.xsd"))
     	{
@@ -92,10 +93,9 @@ public class MainHtmlCreator implements MessageListener {
     
     
     public static boolean validateXMLSchema(String xml, String xsd){
-        
+        // Validacao do xml com o xsd
         try {
-            SchemaFactory factory = 
-                    SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
+            SchemaFactory factory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
             Schema schema = factory.newSchema(new File(xsd));
             Validator validator = schema.newValidator();
             validator.validate(new StreamSource(new StringReader(xml)));
